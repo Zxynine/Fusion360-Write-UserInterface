@@ -1,0 +1,10 @@
+{
+	"autodeskProduct":	"Fusion360",
+	"type":	"script",
+	"author":	"ZXYNINE",
+	"description":	{
+		"":	"Creates a python file filled with nested classes based the Ui items. This helps more over a normal txt file because vs:code will show all the children as you go through the nest."
+	},
+	"supportedOS":	"windows|mac",
+	"editEnabled":	false
+}
