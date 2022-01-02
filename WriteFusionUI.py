@@ -13,6 +13,8 @@ def run(context):
 		if useFileDialog:
 			fileDialog : adsk.core.FileDialog = ui.createFileDialog()
 			fileDialog.isMultiSelectEnabled = False
+			fileDialog.initialDirectory = os.path.dirname(os.path.realpath(__file__))
+			fileDialog.initialFilename = "UiObjects.py"
 			fileDialog.title = "Specify result filename"
 			fileDialog.filter = 'Python files (*.py)'
 			fileDialog.filterIndex = 0
@@ -106,8 +108,13 @@ def createDefControls(controls:'list[adsk.core.ToolbarControl]', indent, result 
 			result += classString((indent),control.id,ID = control.id, Index = control.index, 
 								isLastUsedShown = control.isLastUsedShown, defaultCommand = defaultCommand)
 			with Ignore():
-				classString(indent+1,'AdditionalControls')
-				for cmdDef in control.additionalDefinitions: result += varString( indent+2,'ID', cmdDef.id)
+				if len(control.additionalDefinitions) > 0:
+					result += classString(indent+1,'AdditionalControls')
+					TempResult = []
+					for cmdDef in control.additionalDefinitions:
+						TempResult.append(varString(indent+2, stringifyName(cmdDef.id), ClassRefString('AllPanels', cmdDef.id), False))
+					if len(TempResult) <= 0 : result += f'{Indent(indent+2)}pass\n'
+					else: result += ''.join(TempResult)
 		#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		elif isinstance(control, adsk.core.CommandControl):
 			result += classString(indent,control.id, ID = control.id, Index = control.index)
@@ -118,7 +125,6 @@ def createDefControls(controls:'list[adsk.core.ToolbarControl]', indent, result 
 				with Ignore():
 					result += varString(indent+1, 'commandDefinition', ClassRefString('AllControls', control.commandDefinition.id), False)
 	return result
-
 
 
 #Keeps the context so vscode can properly typehint
@@ -159,7 +165,9 @@ def createDefFile(fullReport):
 	#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	# Collect All toolbar information.
 	result += classString(0, 'Toolbars')
-	for toolbar in GetToolbars(ui.toolbars): result += classString(1, toolbar.id, ID = toolbar.id)
+	for toolbar in GetToolbars(ui.toolbars): 
+		result += classString(1, toolbar.id, ID = toolbar.id)
+		result += createDefControls(toolbar.controls, 2, '',fullReport)
 	#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	# Collect All Workspace information.
 	result += classString(0, 'WorkSpaces')
