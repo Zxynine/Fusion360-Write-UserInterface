@@ -1,3 +1,5 @@
+
+from __future__ import annotations
 import adsk.core, adsk.fusion, adsk.cam, traceback, os, getpass
 
 app : adsk.core.Application = adsk.core.Application.get()
@@ -51,11 +53,6 @@ def classString(indent, name, cleanName = True, **kwargs):
 	return className + vars
 
 
-
-def CheckProduct(obj:adsk.core.Workspace):
-	try: return obj.toolbarPanels and (obj.productType != '')
-	except: return False #Tying to get its panels can throw an error
-
 def GetPath(fileDir, fileName):
 	if not os.path.exists(fileDir): os.makedirs(fileDir)
 	return os.path.join(fileDir, fileName)
@@ -70,26 +67,23 @@ def ClassRefString(parentClassName:str,subclassId:str, isClass=False):
 	if isClass: refString = f'{stringifyName(subclassId)} ({refString})'
 	return refString
 
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-ControlMap = {	adsk.core.ListControlDisplayTypes.CheckBoxListType:'CheckBoxListControlDefinition',
+ListControlMap = {	adsk.core.ListControlDisplayTypes.CheckBoxListType:'CheckBoxListControlDefinition',
 				adsk.core.ListControlDisplayTypes.RadioButtonlistType:'RadioButtonListControlDefinition',
 				adsk.core.ListControlDisplayTypes.StandardListType: 'StandardListControlDefinition'}
-
+DefinitionMap = {adsk.core.ButtonControlDefinition.classType():'ButtonControlDefinition',
+				adsk.core.CheckBoxControlDefinition.classType():'CheckBoxControlDefinition'}
 
 def getCommandDef(commandDef : adsk.core.CommandDefinition, indent):
 	if not commandDef: return ''
 	returnResult = classString(indent,commandDef.id,ID = commandDef.id, isNative = commandDef.isNative, icon = GetResource(commandDef))
 	with Ignore():
 		controlDef = commandDef.controlDefinition
-		if isinstance(controlDef, adsk.core.ButtonControlDefinition):
-			controlType = 'ButtonControlDefinition'
-		elif isinstance(controlDef, adsk.core.CheckBoxControlDefinition):
-			controlType = 'CheckBoxControlDefinition'
-		elif isinstance(controlDef, adsk.core.ListControlDefinition):
-			controlType = ControlMap.get(controlDef.listControlDisplayType, 'NoneListControl')
-		else: controlType = '___Unexpected_Control_Type'
-		returnResult += classString(indent+1,str(commandDef.id) + '_control', isVisible = controlDef.isVisible, 
+		if isinstance(controlDef, adsk.core.ListControlDefinition):
+			controlType = ListControlMap.get(controlDef.listControlDisplayType, 'NoneListControl')
+		else: controlType = DefinitionMap.get(controlDef.classType(), 'Unexpected_Control_Type')
+		returnResult += classString(indent+1, f'{commandDef.id}_control', isVisible = controlDef.isVisible, 
 									isEnabled = controlDef.isEnabled, DefinitionType = controlType)
 	return returnResult
 
@@ -108,12 +102,11 @@ def createDefControls(controls:'list[adsk.core.ToolbarControl]', indent, result 
 			result += classString((indent),control.id,ID = control.id, Index = control.index, 
 								isLastUsedShown = control.isLastUsedShown, defaultCommand = defaultCommand)
 			with Ignore():
-				if len(control.additionalDefinitions) > 0:
+				if fullReport and len(control.additionalDefinitions) > 0:
 					result += classString(indent+1,'AdditionalControls')
-					TempResult = []
-					for cmdDef in control.additionalDefinitions:
-						TempResult.append(varString(indent+2, stringifyName(cmdDef.id), ClassRefString('AllPanels', cmdDef.id), False))
-					if len(TempResult) <= 0 : result += f'{Indent(indent+2)}pass\n'
+					additionalCtrls = TryGet(control.additionalDefinitions)
+					TempResult = [varString(indent+2, stringifyName(cmdDef.id), ClassRefString('AllPanels', cmdDef.id), False) for cmdDef in additionalCtrls]
+					if len(TempResult) == 0 : result += f'{Indent(indent+2)}pass\n'
 					else: result += ''.join(TempResult)
 		#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		elif isinstance(control, adsk.core.CommandControl):
@@ -122,68 +115,92 @@ def createDefControls(controls:'list[adsk.core.ToolbarControl]', indent, result 
 				result += varString(indent+1, 'isPromoted', control.isPromoted)
 				result += varString(indent+1, 'isPromotedByDefault', control.isPromotedByDefault)
 			if fullReport:
-				with Ignore():
-					result += varString(indent+1, 'commandDefinition', ClassRefString('AllControls', control.commandDefinition.id), False)
+				with Ignore(): result += varString(indent+1, 'commandDefinition', ClassRefString('AllControls', control.commandDefinition.id), False)
 	return result
 
 
-#Keeps the context so vscode can properly typehint
-def GetWorkspaces(workspaces:'list[adsk.core.Workspace]'):yield from workspaces
-def GetPanels(panels:'list[adsk.core.ToolbarPanel]'):yield from panels
-def GetTabs(tabs:'list[adsk.core.ToolbarTab]'):yield from tabs
-def GetToolbars(toolbars:'list[adsk.core.Toolbar]'):yield from toolbars
+def CheckProduct(obj:adsk.core.Workspace):
+	try: return obj.toolbarPanels and (obj.productType != '')
+	except: return False #Tying to get its panels can throw an error
 
+
+def TryGet(collection):
+	for I in range(len(collection)):
+		try: 
+			colItem = collection.item(I)
+			if not isinstance(colItem, (adsk.core.Workspace,adsk.core.ToolbarTab)) or CheckProduct(colItem):
+				yield colItem
+		except:pass
 
 
 def createDefFile(fullReport):
-	# Collect workspace information.
-	result = 'import adsk.core, adsk.fusion, adsk.cam\n'
-	result += "__all__ = ['Toolbars', 'WorkSpaces', 'AllPanels', 'AllTabs']\n\n"
+	# Collect ui information.
+
+	uiToolbars = list(TryGet(ui.toolbars))
+	uiWorkspaces = list(TryGet(ui.workspaces))
+	uiTabs = list(TryGet(ui.allToolbarTabs))
+	uiPanels = list(TryGet(ui.allToolbarPanels))
+	commandDefs = list(TryGet(ui.commandDefinitions))
+		
+	if fullReport:
+		def checkAppend(setList:list,iterable:list): setList.extend([item for item in iterable if item not in setList])
+
+		for workspace in uiWorkspaces:
+			workspaceTabs,workspacePanels = TryGet(workspace.toolbarTabs),TryGet(workspace.toolbarPanels)
+			checkAppend(uiTabs,workspaceTabs);checkAppend(uiPanels,workspacePanels)
+			for tab in workspaceTabs:
+				tabPanels = TryGet(tab.toolbarPanels)
+				checkAppend(uiPanels,tabPanels)
+				for panel in tabPanels:
+					panelControls = [control.commandDefinition for control in TryGet(panel.controls) if isinstance(control,adsk.core.CommandControl)]
+					checkAppend(commandDefs,panelControls)
+		
+	#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	result='\n'.join((
+	"import adsk.core, adsk.fusion, adsk.cam",
+	"__all__ = ['Toolbars', 'WorkSpaces', 'AllPanels', 'AllTabs']",
+	"",""))
+
 	#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	# Collect All Control information.
 	if fullReport:
 		result += classString(0, 'AllControls')
-		for definition in ui.commandDefinitions:
-			result += getCommandDef(definition, 1)
+		for definition in commandDefs: result += getCommandDef(definition, 1)
+
 	#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	# Collect All panel information.
 	result += classString(0, 'AllPanels')
-	for panel in GetPanels(ui.allToolbarPanels): 
+	for panel in uiPanels: 
 		result += classString(1, panel.id, ID = panel.id)
 		result += createDefControls(panel.controls, 2, '',fullReport)
+	
 	#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	# Collect All tab information.
 	result += classString(0, 'AllTabs')
-	for tab in GetTabs(ui.allToolbarTabs): 
-		if not CheckProduct(tab): continue
+	for tab in uiTabs: 
 		result += classString((1), tab.id, ID = tab.id)
-		for panelI in range(len(tab.toolbarPanels)):
-			with Ignore():
-				panel = tab.toolbarPanels.item(panelI)
-				result += classString((2), ClassRefString("AllPanels", tab.id, True), False, Index = panel.index)
-
+		for panel in TryGet(tab.toolbarPanels):
+			result += classString((2), ClassRefString("AllPanels", panel.id, True), False, Index = panel.index)	
+	
 	#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	# Collect All toolbar information.
-	result += classString(0, 'Toolbars')
-	for toolbar in GetToolbars(ui.toolbars): 
-		result += classString(1, toolbar.id, ID = toolbar.id)
-		result += createDefControls(toolbar.controls, 2, '',fullReport)
+	if fullReport:
+		result += classString(0, 'Toolbars')
+		for toolbar in uiToolbars: 
+			result += classString(1, toolbar.id, ID = toolbar.id)
+			result += createDefControls(toolbar.controls, 2, '',fullReport)
+
 	#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	# Collect All Workspace information.
 	result += classString(0, 'WorkSpaces')
-	for workspace in GetWorkspaces(ui.workspaces):
-		if not CheckProduct(workspace) or not workspace.isNative: continue
+	for workspace in uiWorkspaces:
 		result += classString(1, workspace.id, ID = workspace.id)
 		#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		result += classString(2, 'Tabs')
 		if len(workspace.toolbarTabs) > 0 :
-			for tab in GetTabs(workspace.toolbarTabs): 
-				result += classString(3, ClassRefString("AllTabs", tab.id, True),False, Index = tab.index)
+			for tab in TryGet(workspace.toolbarTabs):  result += classString(3, ClassRefString("AllTabs", tab.id, True),False, Index = tab.index)
 		else: result += f'{Indent(3)}pass\n'
 		#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-		panelsResult = classString(2, 'Panels')
-		for panel in GetPanels(workspace.toolbarPanels):
-			panelsResult += varString(3, stringifyName(panel.id), ClassRefString('AllPanels', panel.id), False)
-		result += panelsResult
-	#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		result += classString(2, 'Panels')
+		for panel in TryGet(workspace.toolbarPanels): result += varString(3, stringifyName(panel.id), ClassRefString('AllPanels', panel.id), False)
 	return result
