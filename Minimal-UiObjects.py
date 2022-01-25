@@ -186,7 +186,7 @@ class AllPanels:
 			Index = 16
 			isPromoted = False
 			isPromotedByDefault = False
-	class CAM3DPanel:
+	class CAMPanel:
 		ID = "CAM3DPanel"
 		class IronStrategy_adaptive:
 			ID = "IronStrategy_adaptive"
@@ -1498,7 +1498,7 @@ class AllPanels:
 			class DrawSpline:
 				ID = "DrawSpline"
 				Index = 0
-			class DrawCVMSpline3D:
+			class DrawCVMSpline:
 				ID = "DrawCVMSpline3D"
 				Index = 1
 				isPromoted = False
@@ -1564,13 +1564,18 @@ class AllPanels:
 			class IntersectCmd:
 				ID = "IntersectCmd"
 				Index = 1
+			class meshIntersect:
+				ID = "meshIntersect"
+				Index = 7
+				isPromoted = False
+				isPromotedByDefault = False
 			class SeparatorAfter_IntersectCmd:
 				ID = "SeparatorAfter_IntersectCmd"
 				Index = 2
-			class Include3DGeometry:
+			class IncludeGeometry:
 				ID = "Include3DGeometry"
 				Index = 3
-			class SeparatorAfter_Include3DGeometry:
+			class SeparatorAfter_IncludeGeometry:
 				ID = "SeparatorAfter_Include3DGeometry"
 				Index = 4
 			class ProjectToSurface:
@@ -1590,7 +1595,7 @@ class AllPanels:
 		class SeparatorAfter_SketchDimension:
 			ID = "SeparatorAfter_SketchDimension"
 			Index = 22
-	class PCB3DSketchCreatePanel:
+	class PCBSketchCreatePanel:
 		ID = "PCB3DSketchCreatePanel"
 		class DrawPolyline:
 			ID = "DrawPolyline"
@@ -1672,7 +1677,7 @@ class AllPanels:
 		class SplineDropDown:
 			ID = "SplineDropDown"
 			Index = 6
-			class DrawCVMSpline3D:
+			class DrawCVMSpline:
 				ID = "DrawCVMSpline3D"
 				Index = 0
 				isPromoted = True
@@ -1733,10 +1738,10 @@ class AllPanels:
 			class SeparatorAfter_IntersectCmd:
 				ID = "SeparatorAfter_IntersectCmd"
 				Index = 2
-			class Include3DGeometry:
+			class IncludeGeometry:
 				ID = "Include3DGeometry"
 				Index = 3
-			class SeparatorAfter_Include3DGeometry:
+			class SeparatorAfter_IncludeGeometry:
 				ID = "SeparatorAfter_Include3DGeometry"
 				Index = 4
 			class ProjectToSurface:
@@ -1880,7 +1885,7 @@ class AllPanels:
 		class FusionCreateNewComponentCommand:
 			ID = "FusionCreateNewComponentCommand"
 			Index = 0
-			isPromoted = False
+			isPromoted = True
 			isPromotedByDefault = False
 		class SketchCreate:
 			ID = "SketchCreate"
@@ -2118,55 +2123,65 @@ class AllPanels:
 			Index = 10
 			isPromoted = False
 			isPromotedByDefault = False
+		class Tion_MoveCommand:
+			ID = "Tion_MoveCommand"
+			Index = 11
+			isPromoted = True
+			isPromotedByDefault = True
+		class Tion_InsetFaceTool:
+			ID = "Tion_InsetFaceTool"
+			Index = 12
+			isPromoted = True
+			isPromotedByDefault = True
 		class FusionReplaceFaceCommand:
 			ID = "FusionReplaceFaceCommand"
-			Index = 11
+			Index = 13
 			isPromoted = False
 			isPromotedByDefault = False
 		class FusionSplitFaceCommand:
 			ID = "FusionSplitFaceCommand"
-			Index = 12
+			Index = 14
 			isPromoted = False
 			isPromotedByDefault = False
 		class FusionSplitBodyCommand:
 			ID = "FusionSplitBodyCommand"
-			Index = 13
+			Index = 15
 			isPromoted = True
 			isPromotedByDefault = True
 		class FusionPartingLineSplitCmd:
 			ID = "FusionPartingLineSplitCmd"
-			Index = 14
+			Index = 16
 			isPromoted = False
 			isPromotedByDefault = False
 		class SeparatorAfter_FusionPartingLineSplitCmd:
 			ID = "SeparatorAfter_FusionPartingLineSplitCmd"
-			Index = 15
+			Index = 17
 		class FusionMoveCommand:
 			ID = "FusionMoveCommand"
-			Index = 16
+			Index = 18
 			isPromoted = True
 			isPromotedByDefault = True
 		class AlignCmd:
 			ID = "AlignCmd"
-			Index = 17
+			Index = 19
 			isPromoted = False
 			isPromotedByDefault = False
 		class FusionDeleteCommand:
 			ID = "FusionDeleteCommand"
-			Index = 18
+			Index = 20
 			isPromoted = False
 			isPromotedByDefault = False
 		class SeparatorAfter_FusionDeleteCommand:
 			ID = "SeparatorAfter_FusionDeleteCommand"
-			Index = 19
+			Index = 21
 		class ArrangeCommand:
 			ID = "ArrangeCommand"
-			Index = 20
+			Index = 22
 			isPromoted = False
 			isPromotedByDefault = False
 		class SimplifyDropDown:
 			ID = "SimplifyDropDown"
-			Index = 21
+			Index = 23
 			class FusionRemoveFeaturesCommand:
 				ID = "FusionRemoveFeaturesCommand"
 				Index = 0
@@ -2184,46 +2199,46 @@ class AllPanels:
 				isPromotedByDefault = False
 		class SeparatorAfter_SimplifyDropDown:
 			ID = "SeparatorAfter_SimplifyDropDown"
-			Index = 22
+			Index = 24
 		class PhysicalMaterialCommand:
 			ID = "PhysicalMaterialCommand"
-			Index = 23
+			Index = 25
 			isPromoted = False
 			isPromotedByDefault = False
 		class AppearanceCommand:
 			ID = "AppearanceCommand"
-			Index = 24
+			Index = 26
 			isPromoted = False
 			isPromotedByDefault = False
 		class MaterialCommand:
 			ID = "MaterialCommand"
-			Index = 25
+			Index = 27
 			isPromoted = False
 			isPromotedByDefault = False
 		class SeparatorAfter_MaterialCommand:
 			ID = "SeparatorAfter_MaterialCommand"
-			Index = 26
+			Index = 28
 		class ChangeParameterCommand:
 			ID = "ChangeParameterCommand"
-			Index = 27
+			Index = 29
 			isPromoted = True
 			isPromotedByDefault = False
 		class FusionComputeAllCommand:
 			ID = "FusionComputeAllCommand"
-			Index = 28
+			Index = 30
 			isPromoted = False
 			isPromotedByDefault = False
 		class SeparatorAfter_FusionComputeAllCommand:
 			ID = "SeparatorAfter_FusionComputeAllCommand"
-			Index = 29
+			Index = 31
 		class TSpline2BRepCommand:
 			ID = "TSpline2BRepCommand"
-			Index = 30
+			Index = 32
 			isPromoted = False
 			isPromotedByDefault = False
 		class MeshDropDown:
 			ID = "MeshDropDown"
-			Index = 31
+			Index = 33
 			class Mesh2BRepCommand:
 				ID = "Mesh2BRepCommand"
 				Index = 0
@@ -2234,6 +2249,16 @@ class AllPanels:
 				Index = 1
 				isPromoted = False
 				isPromotedByDefault = False
+		class Tion_GetUICommand:
+			ID = "Tion_GetUICommand"
+			Index = 34
+			isPromoted = True
+			isPromotedByDefault = True
+		class Tion_LoftCut:
+			ID = "Tion_LoftCut"
+			Index = 35
+			isPromoted = True
+			isPromotedByDefault = True
 	class SheetMetalCreatePanel:
 		ID = "SheetMetalCreatePanel"
 		class FusionCreateNewComponentCommand:
@@ -2405,7 +2430,7 @@ class AllPanels:
 		class FusionCreateNewComponentCommand:
 			ID = "FusionCreateNewComponentCommand"
 			Index = 0
-			isPromoted = True
+			isPromoted = False
 			isPromotedByDefault = True
 		class JointAssembleCmdNew:
 			ID = "JointAssembleCmdNew"
@@ -2415,12 +2440,12 @@ class AllPanels:
 		class JointAsBuiltCmd:
 			ID = "JointAsBuiltCmd"
 			Index = 2
-			isPromoted = False
+			isPromoted = True
 			isPromotedByDefault = False
 		class JointOrigin:
 			ID = "JointOrigin"
 			Index = 3
-			isPromoted = False
+			isPromoted = True
 			isPromotedByDefault = False
 		class RigidGroupCmd:
 			ID = "RigidGroupCmd"
@@ -2771,29 +2796,34 @@ class AllPanels:
 		class FusionMoveCommand:
 			ID = "FusionMoveCommand"
 			Index = 17
+			isPromoted = True
+			isPromotedByDefault = False
+		class Tion_SurfaceCopyTool:
+			ID = "Tion_SurfaceCopyTool"
+			Index = 18
 			isPromoted = False
 			isPromotedByDefault = False
 		class AlignCmd:
 			ID = "AlignCmd"
-			Index = 18
+			Index = 19
 			isPromoted = False
 			isPromotedByDefault = False
 		class FusionDeleteCommand:
 			ID = "FusionDeleteCommand"
-			Index = 19
+			Index = 20
 			isPromoted = False
 			isPromotedByDefault = False
 		class SeparatorAfter_FusionDeleteCommand:
 			ID = "SeparatorAfter_FusionDeleteCommand"
-			Index = 20
+			Index = 21
 		class TSpline2BRepCommand:
 			ID = "TSpline2BRepCommand"
-			Index = 21
+			Index = 22
 			isPromoted = False
 			isPromotedByDefault = False
 		class MeshDropDown:
 			ID = "MeshDropDown"
-			Index = 22
+			Index = 23
 			class Mesh2BRepCommand:
 				ID = "Mesh2BRepCommand"
 				Index = 0
@@ -2806,33 +2836,33 @@ class AllPanels:
 				isPromotedByDefault = False
 		class SeparatorAfter_MeshDropDown:
 			ID = "SeparatorAfter_MeshDropDown"
-			Index = 23
+			Index = 24
 		class PhysicalMaterialCommand:
 			ID = "PhysicalMaterialCommand"
-			Index = 24
+			Index = 25
 			isPromoted = False
 			isPromotedByDefault = False
 		class AppearanceCommand:
 			ID = "AppearanceCommand"
-			Index = 25
+			Index = 26
 			isPromoted = False
 			isPromotedByDefault = False
 		class MaterialCommand:
 			ID = "MaterialCommand"
-			Index = 26
+			Index = 27
 			isPromoted = False
 			isPromotedByDefault = False
 		class SeparatorAfter_MaterialCommand:
 			ID = "SeparatorAfter_MaterialCommand"
-			Index = 27
+			Index = 28
 		class ChangeParameterCommand:
 			ID = "ChangeParameterCommand"
-			Index = 28
+			Index = 29
 			isPromoted = False
 			isPromotedByDefault = False
 		class FusionComputeAllCommand:
 			ID = "FusionComputeAllCommand"
-			Index = 29
+			Index = 30
 			isPromoted = False
 			isPromotedByDefault = False
 	class TSplinePrimitivePanel:
@@ -3330,14 +3360,14 @@ class AllPanels:
 			Index = 4
 			isPromoted = True
 			isPromotedByDefault = True
-	class PCB3DPanel:
+	class PCBPanel:
 		ID = "PCB3DPanel"
-		class PCB3DFlipComponentCmd:
+		class PCBFlipComponentCmd:
 			ID = "PCB3DFlipComponentCmd"
 			Index = 0
 			isPromoted = True
 			isPromotedByDefault = True
-		class PCB3DMoveComponentsCmd:
+		class PCBMoveComponentsCmd:
 			ID = "PCB3DMoveComponentsCmd"
 			Index = 1
 			isPromoted = True
@@ -3631,6 +3661,21 @@ class AllPanels:
 			Index = 13
 			isPromoted = True
 			isPromotedByDefault = True
+		class zxynine_anymacro_BuiltinAlignView:
+			ID = "zxynine_anymacro_BuiltinAlignView"
+			Index = 14
+			isPromoted = False
+			isPromotedByDefault = False
+		class zxynine_anymacro_BuiltinChangeView:
+			ID = "zxynine_anymacro_BuiltinChangeView"
+			Index = 15
+			isPromoted = False
+			isPromotedByDefault = False
+		class zxynine_anymacro_BuiltinChangeViewOrientation:
+			ID = "zxynine_anymacro_BuiltinChangeViewOrientation"
+			Index = 16
+			isPromoted = False
+			isPromotedByDefault = False
 	class InsertPanel:
 		ID = "InsertPanel"
 		class InsertDialogCommand:
@@ -3686,19 +3731,9 @@ class AllPanels:
 			Index = 10
 			isPromoted = True
 			isPromotedByDefault = False
-		class cadenasparts4cad:
-			ID = "cadenasparts4cad"
-			Index = 11
-			isPromoted = False
-			isPromotedByDefault = False
-		class traceparts_insert:
-			ID = "traceparts_insert"
-			Index = 12
-			isPromoted = False
-			isPromotedByDefault = False
 	class StopPackagePanel:
 		ID = "StopPackagePanel"
-		class Package3DStop:
+		class PackageStop:
 			ID = "Package3DStop"
 			Index = 0
 			isPromoted = True
@@ -3727,7 +3762,7 @@ class AllPanels:
 			Index = 2
 			isPromoted = True
 			isPromotedByDefault = True
-	class Package3DPanel:
+	class PackagePanel:
 		ID = "Package3DPanel"
 		class FusionMoveCommand:
 			ID = "FusionMoveCommand"
@@ -3978,11 +4013,239 @@ class AllPanels:
 			Index = 1
 			isPromoted = False
 			isPromotedByDefault = False
-		class ExportToUnity_hellion:
-			ID = "ExportToUnity_hellion"
+		class OpenFoldersseparatorTop:
+			ID = "OpenFoldersseparatorTop"
 			Index = 2
-			isPromoted = True
-			isPromotedByDefault = True
+		class OpenFoldersrootDropdown:
+			ID = "OpenFoldersrootDropdown"
+			Index = 3
+			class OpenFoldersFusionInstall:
+				ID = "OpenFoldersFusionInstall"
+				Index = 0
+				isPromoted = False
+				isPromotedByDefault = False
+			class OpenFoldersFusionApi:
+				ID = "OpenFoldersFusionApi"
+				Index = 1
+				class OpenFoldersFusionApiCpp:
+					ID = "OpenFoldersFusionApiCpp"
+					Index = 0
+					isPromoted = False
+					isPromotedByDefault = False
+				class OpenFoldersFusionApiPython:
+					ID = "OpenFoldersFusionApiPython"
+					Index = 1
+					isPromoted = False
+					isPromotedByDefault = False
+			class OpenFoldersFusionPython:
+				ID = "OpenFoldersFusionPython"
+				Index = 2
+				isPromoted = False
+				isPromotedByDefault = False
+			class OpenFoldersFusionPythonseparator:
+				ID = "OpenFoldersFusionPythonseparator"
+				Index = 3
+			class OpenFoldersAutodesk:
+				ID = "OpenFoldersAutodesk"
+				Index = 4
+				class OpenFoldersAutodeskLocal:
+					ID = "OpenFoldersAutodeskLocal"
+					Index = 0
+					isPromoted = False
+					isPromotedByDefault = False
+				class OpenFoldersAutodeskRoaming:
+					ID = "OpenFoldersAutodeskRoaming"
+					Index = 1
+					isPromoted = False
+					isPromotedByDefault = False
+			class OpenFoldersAutodeskseparator:
+				ID = "OpenFoldersAutodeskseparator"
+				Index = 5
+			class OpenFoldersDesktop:
+				ID = "OpenFoldersDesktop"
+				Index = 6
+				isPromoted = False
+				isPromotedByDefault = False
+			class OpenFoldersTempFiles:
+				ID = "OpenFoldersTempFiles"
+				Index = 7
+				isPromoted = False
+				isPromotedByDefault = False
+			class OpenFoldersAppdata:
+				ID = "OpenFoldersAppdata"
+				Index = 8
+				class OpenFoldersAppdataLocal:
+					ID = "OpenFoldersAppdataLocal"
+					Index = 0
+					isPromoted = False
+					isPromotedByDefault = False
+				class OpenFoldersAppdataRoaming:
+					ID = "OpenFoldersAppdataRoaming"
+					Index = 1
+					isPromoted = False
+					isPromotedByDefault = False
+			class OpenFoldersAppdataseparator:
+				ID = "OpenFoldersAppdataseparator"
+				Index = 9
+			class OpenFoldersSettings:
+				ID = "OpenFoldersSettings"
+				Index = 10
+				isPromoted = False
+				isPromotedByDefault = False
+			class OpenFoldersSettingsseparator:
+				ID = "OpenFoldersSettingsseparator"
+				Index = 11
+		class OpenFoldersrootDropdownUndoc:
+			ID = "OpenFoldersrootDropdownUndoc"
+			Index = 4
+			class OpenFoldersRootDirectory:
+				ID = "OpenFoldersRootDirectory"
+				Index = 0
+				isPromoted = False
+				isPromotedByDefault = False
+			class OpenFoldersExecutableDirectory:
+				ID = "OpenFoldersExecutableDirectory"
+				Index = 1
+				isPromoted = False
+				isPromotedByDefault = False
+			class OpenFoldersLocalizationDirectory:
+				ID = "OpenFoldersLocalizationDirectory"
+				Index = 2
+				isPromoted = False
+				isPromotedByDefault = False
+			class OpenFoldersCoreAddInDirectory:
+				ID = "OpenFoldersCoreAddInDirectory"
+				Index = 3
+				isPromoted = False
+				isPromotedByDefault = False
+			class OpenFoldersStringTableDirectory:
+				ID = "OpenFoldersStringTableDirectory"
+				Index = 4
+				isPromoted = False
+				isPromotedByDefault = False
+			class OpenFoldersAppDirectory:
+				ID = "OpenFoldersAppDirectory"
+				Index = 5
+				isPromoted = False
+				isPromotedByDefault = False
+			class OpenFoldersSharedExtensionDirectory:
+				ID = "OpenFoldersSharedExtensionDirectory"
+				Index = 6
+				isPromoted = False
+				isPromotedByDefault = False
+			class OpenFoldersTemporaryDirectory:
+				ID = "OpenFoldersTemporaryDirectory"
+				Index = 7
+				isPromoted = False
+				isPromotedByDefault = False
+			class OpenFoldersUnbrandedUserDataDirectory:
+				ID = "OpenFoldersUnbrandedUserDataDirectory"
+				Index = 8
+				isPromoted = False
+				isPromotedByDefault = False
+			class OpenFoldersUserDataDirectory:
+				ID = "OpenFoldersUserDataDirectory"
+				Index = 9
+				isPromoted = False
+				isPromotedByDefault = False
+			class OpenFoldersAllUsersDataDirectory:
+				ID = "OpenFoldersAllUsersDataDirectory"
+				Index = 10
+				isPromoted = False
+				isPromotedByDefault = False
+			class OpenFoldersUnbrandedUserAppPluginsDirectory:
+				ID = "OpenFoldersUnbrandedUserAppPluginsDirectory"
+				Index = 11
+				isPromoted = False
+				isPromotedByDefault = False
+			class OpenFoldersBootstrapOptionDirectory:
+				ID = "OpenFoldersBootstrapOptionDirectory"
+				Index = 12
+				isPromoted = False
+				isPromotedByDefault = False
+			class OpenFoldersOptionsDirectory:
+				ID = "OpenFoldersOptionsDirectory"
+				Index = 13
+				isPromoted = False
+				isPromotedByDefault = False
+			class OpenFoldersCloudCacheDirectory:
+				ID = "OpenFoldersCloudCacheDirectory"
+				Index = 14
+				isPromoted = False
+				isPromotedByDefault = False
+			class OpenFoldersScriptsDirectory:
+				ID = "OpenFoldersScriptsDirectory"
+				Index = 15
+				isPromoted = False
+				isPromotedByDefault = False
+			class OpenFoldersAutorunScriptsDirectory:
+				ID = "OpenFoldersAutorunScriptsDirectory"
+				Index = 16
+				isPromoted = False
+				isPromotedByDefault = False
+			class OpenFoldersSamplesScriptsDirectory:
+				ID = "OpenFoldersSamplesScriptsDirectory"
+				Index = 17
+				isPromoted = False
+				isPromotedByDefault = False
+			class OpenFoldersProgramDataScriptsDirectory:
+				ID = "OpenFoldersProgramDataScriptsDirectory"
+				Index = 18
+				isPromoted = False
+				isPromotedByDefault = False
+			class OpenFoldersAppDataScriptsDirectory:
+				ID = "OpenFoldersAppDataScriptsDirectory"
+				Index = 19
+				isPromoted = False
+				isPromotedByDefault = False
+			class OpenFoldersManuallyInstalledScriptsDirectory:
+				ID = "OpenFoldersManuallyInstalledScriptsDirectory"
+				Index = 20
+				isPromoted = False
+				isPromotedByDefault = False
+			class OpenFoldersMaterialsDirectory:
+				ID = "OpenFoldersMaterialsDirectory"
+				Index = 21
+				isPromoted = False
+				isPromotedByDefault = False
+			class OpenFoldersTestTempDirectory:
+				ID = "OpenFoldersTestTempDirectory"
+				Index = 22
+				isPromoted = False
+				isPromotedByDefault = False
+			class OpenFoldersScratchDirectory:
+				ID = "OpenFoldersScratchDirectory"
+				Index = 23
+				isPromoted = False
+				isPromotedByDefault = False
+			class OpenFoldersResultDirectory:
+				ID = "OpenFoldersResultDirectory"
+				Index = 24
+				isPromoted = False
+				isPromotedByDefault = False
+			class OpenFoldersSampleDirectory:
+				ID = "OpenFoldersSampleDirectory"
+				Index = 25
+				isPromoted = False
+				isPromotedByDefault = False
+			class OpenFoldersAppLogFilePath:
+				ID = "OpenFoldersAppLogFilePath"
+				Index = 26
+				isPromoted = False
+				isPromotedByDefault = False
+			class OpenFoldersCacheDirectory:
+				ID = "OpenFoldersCacheDirectory"
+				Index = 27
+				isPromoted = False
+				isPromotedByDefault = False
+			class OpenFoldersAutoSaveDirectory:
+				ID = "OpenFoldersAutoSaveDirectory"
+				Index = 28
+				isPromoted = False
+				isPromotedByDefault = False
+		class OpenFoldersseparatorBottom:
+			ID = "OpenFoldersseparatorBottom"
+			Index = 5
 	class UtilityPanel:
 		ID = "UtilityPanel"
 		class MaterialCommand:
@@ -4046,12 +4309,17 @@ class AllPanels:
 			Index = 8
 			isPromoted = False
 			isPromotedByDefault = False
+		class thomasa88_NoComponentDrag_Enable:
+			ID = "thomasa88_NoComponentDrag_Enable"
+			Index = 9
+			isPromoted = False
+			isPromotedByDefault = False
 		class SeparatorAfter_FusionDragCompControlsCmd:
 			ID = "SeparatorAfter_FusionDragCompControlsCmd"
-			Index = 9
+			Index = 10
 		class SelectionPriorityCommandsDropDown:
 			ID = "SelectionPriorityCommandsDropDown"
-			Index = 10
+			Index = 11
 			class SelectBodyPriorityCommand:
 				ID = "SelectBodyPriorityCommand"
 				Index = 0
@@ -4074,7 +4342,7 @@ class AllPanels:
 				isPromotedByDefault = False
 		class SelectionFilterCommand:
 			ID = "SelectionFilterCommand"
-			Index = 11
+			Index = 12
 			isPromoted = False
 			isPromotedByDefault = False
 	class NewPanel:
@@ -4104,8 +4372,8 @@ class AllPanels:
 			Index = 4
 			isPromoted = False
 			isPromotedByDefault = False
-		class uuid_025fa124_490a_4c23_a655_34ef228792be:
-			ID = "025fa124-490a-4c23-a655-34ef228792be"
+		class uuid_7f8371cc_20b6_4d72_b138_8a0afa782f1c:
+			ID = "7f8371cc-20b6-4d72-b138-8a0afa782f1c"
 			Index = 5
 		class NC2:
 			ID = "NC2"
@@ -4127,8 +4395,8 @@ class AllPanels:
 			Index = 9
 			isPromoted = False
 			isPromotedByDefault = False
-		class uuid_50409314_6c48_4f73_8654_5004d1e023c4:
-			ID = "50409314-6c48-4f73-8654-5004d1e023c4"
+		class uuid_63f02fba_311d_4269_89c3_7195c7fe12aa:
+			ID = "63f02fba-311d-4269-89c3-7195c7fe12aa"
 			Index = 10
 		class NC9:
 			ID = "NC9"
@@ -4698,6 +4966,63 @@ class AllPanels:
 			Index = 0
 			isPromoted = True
 			isPromotedByDefault = True
+	class zxynine_anyMacroPanel:
+		ID = "zxynine_anyMacroPanel"
+		class zxynine_anyMacroDropdown:
+			ID = "zxynine_anyMacroDropdown"
+			Index = 0
+			class zxynine_anyMacroList:
+				ID = "zxynine_anyMacroList"
+				Index = 0
+				isPromoted = True
+				isPromotedByDefault = True
+			class zxynine_anyMacroClearRecord:
+				ID = "zxynine_anyMacroClearRecord"
+				Index = 1
+				isPromoted = False
+				isPromotedByDefault = False
+			class zxynine_anyMacroBuildMacro:
+				ID = "zxynine_anyMacroBuildMacro"
+				Index = 2
+				isPromoted = False
+				isPromotedByDefault = False
+			class zxynine_anyMacroList_Seperator:
+				ID = "zxynine_anyMacroList_Seperator"
+				Index = 3
+		class zxynine_anyMacroPremadeMacrosDropdown:
+			ID = "zxynine_anyMacroPremadeMacrosDropdown"
+			Index = 1
+			class zxynine_anyMacroListEmpty:
+				ID = "zxynine_anyMacroListEmpty"
+				Index = 0
+				isPromoted = False
+				isPromotedByDefault = False
+			class zxynine_anyMacroListEmpty_Seperator:
+				ID = "zxynine_anyMacroListEmpty_Seperator"
+				Index = 1
+			class AnyMacro_Builtin_Align_Camera_group:
+				ID = "AnyMacro_Builtin_Align_Camera_group"
+				Index = 2
+				class AnyMacro_Builtin_Align_Camera:
+					ID = "AnyMacro_Builtin_Align_Camera"
+					Index = 0
+					isPromoted = False
+					isPromotedByDefault = False
+				class AnyMacro_Builtin_Align_Camera_delete:
+					ID = "AnyMacro_Builtin_Align_Camera_delete"
+					Index = 1
+					isPromoted = False
+					isPromotedByDefault = False
+		class zxynine_anyMacroHaltFire:
+			ID = "zxynine_anyMacroHaltFire"
+			Index = 2
+			isPromoted = False
+			isPromotedByDefault = False
+		class zxynine_anyMacroBlockConsecutive:
+			ID = "zxynine_anyMacroBlockConsecutive"
+			Index = 3
+			isPromoted = False
+			isPromotedByDefault = False
 	class thomasa88_anyShortcutPanel:
 		ID = "thomasa88_anyShortcutPanel"
 		class thomasa88_anyShortcutPremadeDropdown:
@@ -4723,9 +5048,29 @@ class AllPanels:
 				Index = 3
 				isPromoted = False
 				isPromotedByDefault = False
+			class thomasa88_anyShortcutBuiltinAlignView:
+				ID = "thomasa88_anyShortcutBuiltinAlignView"
+				Index = 4
+				isPromoted = False
+				isPromotedByDefault = False
+			class thomasa88_anyShortcutBuiltinChangeView:
+				ID = "thomasa88_anyShortcutBuiltinChangeView"
+				Index = 5
+				isPromoted = False
+				isPromotedByDefault = False
+			class thomasa88_anyShortcutBuiltinChangeAlignView:
+				ID = "thomasa88_anyShortcutBuiltinChangeAlignView"
+				Index = 6
+				isPromoted = False
+				isPromotedByDefault = False
+			class tion_buttonTest:
+				ID = "tion_buttonTest"
+				Index = 7
+				isPromoted = False
+				isPromotedByDefault = False
 			class thomasa88_anyShortcutBuiltinTimelineList:
 				ID = "thomasa88_anyShortcutBuiltinTimelineList"
-				Index = 4
+				Index = 8
 				class thomasa88_anyShortcutListRollToBeginning:
 					ID = "thomasa88_anyShortcutListRollToBeginning"
 					Index = 0
@@ -4746,9 +5091,14 @@ class AllPanels:
 					Index = 3
 					isPromoted = False
 					isPromotedByDefault = False
+				class thomasa88_anyShortcutListHistoryPlay:
+					ID = "thomasa88_anyShortcutListHistoryPlay"
+					Index = 4
+					isPromoted = False
+					isPromotedByDefault = False
 			class thomasa88_anyShortcutBuiltinViewList:
 				ID = "thomasa88_anyShortcutBuiltinViewList"
-				Index = 5
+				Index = 9
 				class thomasa88_anyShortcutBuiltinViewFront:
 					ID = "thomasa88_anyShortcutBuiltinViewFront"
 					Index = 0
@@ -4779,6 +5129,29 @@ class AllPanels:
 					Index = 5
 					isPromoted = False
 					isPromotedByDefault = False
+			class thomasa88_anyShortcutBuiltinCornerViewList:
+				ID = "thomasa88_anyShortcutBuiltinCornerViewList"
+				Index = 10
+				class thomasa88_anyShortcutBuiltinCornerViewListIsoTopRight:
+					ID = "thomasa88_anyShortcutBuiltinCornerViewListIsoTopRight"
+					Index = 0
+					isPromoted = False
+					isPromotedByDefault = False
+				class thomasa88_anyShortcutBuiltinCornerViewListIsoTopLeft:
+					ID = "thomasa88_anyShortcutBuiltinCornerViewListIsoTopLeft"
+					Index = 1
+					isPromoted = False
+					isPromotedByDefault = False
+				class thomasa88_anyShortcutBuiltinCornerViewListIsoBottomRight:
+					ID = "thomasa88_anyShortcutBuiltinCornerViewListIsoBottomRight"
+					Index = 2
+					isPromoted = False
+					isPromotedByDefault = False
+				class thomasa88_anyShortcutBuiltinCornerViewListIsoBottomLeft:
+					ID = "thomasa88_anyShortcutBuiltinCornerViewListIsoBottomLeft"
+					Index = 3
+					isPromoted = False
+					isPromotedByDefault = False
 		class thomasa88_anyShortcutDropdown:
 			ID = "thomasa88_anyShortcutDropdown"
 			Index = 1
@@ -4787,8 +5160,8 @@ class AllPanels:
 				Index = 0
 				isPromoted = True
 				isPromotedByDefault = True
-			class uuid_da596490_2d39_4792_b1c6_385d96264808:
-				ID = "da596490-2d39-4792-b1c6-385d96264808"
+			class uuid_26c8ae4d_d59b_4d1a_8f3b_2ec854ea0357:
+				ID = "26c8ae4d-d59b-4d1a-8f3b-2ec854ea0357"
 				Index = 1
 	class ViewsPanel:
 		ID = "ViewsPanel"
@@ -5256,931 +5629,912 @@ class AllPanels:
 class AllTabs:
 	class MillingTab:
 		ID = "MillingTab"
-		class CAMJobPanel(AllPanels.CAMJobPanel):
+		class CAMJobPanel (AllPanels.CAMJobPanel):
 			Index = 0
-		class CAM2DPanel(AllPanels.CAM2DPanel):
+		class CAM2DPanel (AllPanels.CAM2DPanel):
 			Index = 4
-		class CAM3DPanel(AllPanels.CAM3DPanel):
+		class CAMPanel (AllPanels.CAMPanel):
 			Index = 5
-		class CAMDrillingPanel(AllPanels.CAMDrillingPanel):
+		class CAMDrillingPanel (AllPanels.CAMDrillingPanel):
 			Index = 7
-		class CAMMultiAxisPanel(AllPanels.CAMMultiAxisPanel):
+		class CAMMultiAxisPanel (AllPanels.CAMMultiAxisPanel):
 			Index = 8
-		class CAMDEDPanel(AllPanels.CAMDEDPanel):
+		class CAMDEDPanel (AllPanels.CAMDEDPanel):
 			Index = 13
-		class CAMEditPanel(AllPanels.CAMEditPanel):
+		class CAMEditPanel (AllPanels.CAMEditPanel):
 			Index = 6
-		class CAMActionPanel(AllPanels.CAMActionPanel):
+		class CAMActionPanel (AllPanels.CAMActionPanel):
 			Index = 30
-		class CAMManagePanel(AllPanels.CAMManagePanel):
+		class CAMManagePanel (AllPanels.CAMManagePanel):
 			Index = 35
-		class CAMInspectPanel(AllPanels.CAMInspectPanel):
+		class CAMInspectPanel (AllPanels.CAMInspectPanel):
 			Index = 34
-		class SelectPanel(AllPanels.SelectPanel):
+		class SelectPanel (AllPanels.SelectPanel):
 			Index = 39
 	class TurningTab:
 		ID = "TurningTab"
-		class CAMJobPanel(AllPanels.CAMJobPanel):
+		class CAMJobPanel (AllPanels.CAMJobPanel):
 			Index = 0
-		class CAMTurningPanel(AllPanels.CAMTurningPanel):
+		class CAMTurningPanel (AllPanels.CAMTurningPanel):
 			Index = 9
-		class CAMDrillingPanel(AllPanels.CAMDrillingPanel):
+		class CAMDrillingPanel (AllPanels.CAMDrillingPanel):
 			Index = 7
-		class CAMActionPanel(AllPanels.CAMActionPanel):
+		class CAMActionPanel (AllPanels.CAMActionPanel):
 			Index = 30
-		class CAMManagePanel(AllPanels.CAMManagePanel):
+		class CAMManagePanel (AllPanels.CAMManagePanel):
 			Index = 35
-		class CAMInspectPanel(AllPanels.CAMInspectPanel):
+		class CAMInspectPanel (AllPanels.CAMInspectPanel):
 			Index = 34
-		class SelectPanel(AllPanels.SelectPanel):
+		class SelectPanel (AllPanels.SelectPanel):
 			Index = 39
 	class AdditiveTab:
 		ID = "AdditiveTab"
-		class CAMAdditiveJobPanel(AllPanels.CAMAdditiveJobPanel):
+		class CAMAdditiveJobPanel (AllPanels.CAMAdditiveJobPanel):
 			Index = 2
-		class CAMAdditivePositioningPanel(AllPanels.CAMAdditivePositioningPanel):
+		class CAMAdditivePositioningPanel (AllPanels.CAMAdditivePositioningPanel):
 			Index = 3
-		class CAMAdditivePrintProfilePanel(AllPanels.CAMAdditivePrintProfilePanel):
+		class CAMAdditivePrintProfilePanel (AllPanels.CAMAdditivePrintProfilePanel):
 			Index = 32
-		class CAMInfillPanel(AllPanels.CAMInfillPanel):
+		class CAMInfillPanel (AllPanels.CAMInfillPanel):
 			Index = 11
-		class CAMSupportsPanel(AllPanels.CAMSupportsPanel):
+		class CAMSupportsPanel (AllPanels.CAMSupportsPanel):
 			Index = 12
-		class CAMDEDPanel(AllPanels.CAMDEDPanel):
+		class CAMDEDPanel (AllPanels.CAMDEDPanel):
 			Index = 13
-		class CAMEditPanel(AllPanels.CAMEditPanel):
+		class CAMEditPanel (AllPanels.CAMEditPanel):
 			Index = 6
-		class CAMAdditiveProcessSimPanel(AllPanels.CAMAdditiveProcessSimPanel):
+		class CAMAdditiveProcessSimPanel (AllPanels.CAMAdditiveProcessSimPanel):
 			Index = 14
-		class CAMAdditiveActionPanel(AllPanels.CAMAdditiveActionPanel):
+		class CAMAdditiveActionPanel (AllPanels.CAMAdditiveActionPanel):
 			Index = 33
-		class CAMAdditiveManagePanel(AllPanels.CAMAdditiveManagePanel):
+		class CAMAdditiveManagePanel (AllPanels.CAMAdditiveManagePanel):
 			Index = 36
-		class CAMInspectPanel(AllPanels.CAMInspectPanel):
+		class CAMInspectPanel (AllPanels.CAMInspectPanel):
 			Index = 34
-		class SelectPanel(AllPanels.SelectPanel):
+		class SelectPanel (AllPanels.SelectPanel):
 			Index = 39
 	class AdditiveResultsTab:
 		ID = "AdditiveResultsTab"
-		class CAMAdditiveProcessSimResultsPanel(AllPanels.CAMAdditiveProcessSimResultsPanel):
+		class CAMAdditiveProcessSimResultsPanel (AllPanels.CAMAdditiveProcessSimResultsPanel):
 			Index = 15
-		class CAMAdditiveProcessSimActionPanel(AllPanels.CAMAdditiveProcessSimActionPanel):
+		class CAMAdditiveProcessSimActionPanel (AllPanels.CAMAdditiveProcessSimActionPanel):
 			Index = 16
-		class CAMAdditiveProcessSimFinishPanel(AllPanels.CAMAdditiveProcessSimFinishPanel):
+		class CAMAdditiveProcessSimFinishPanel (AllPanels.CAMAdditiveProcessSimFinishPanel):
 			Index = 17
 	class ProbingTab:
 		ID = "ProbingTab"
-		class CAMJobPanel(AllPanels.CAMJobPanel):
+		class CAMJobPanel (AllPanels.CAMJobPanel):
 			Index = 0
-		class CAMProbingPanel(AllPanels.CAMProbingPanel):
+		class CAMProbingPanel (AllPanels.CAMProbingPanel):
 			Index = 18
-		class CAMCMMPanel(AllPanels.CAMCMMPanel):
+		class CAMCMMPanel (AllPanels.CAMCMMPanel):
 			Index = 19
-		class CAMManualInspectionPanel(AllPanels.CAMManualInspectionPanel):
+		class CAMManualInspectionPanel (AllPanels.CAMManualInspectionPanel):
 			Index = 20
-		class CAMProbingActionPanel(AllPanels.CAMProbingActionPanel):
+		class CAMProbingActionPanel (AllPanels.CAMProbingActionPanel):
 			Index = 31
-		class CAMManagePanel(AllPanels.CAMManagePanel):
+		class CAMManagePanel (AllPanels.CAMManagePanel):
 			Index = 35
-		class CAMInspectPanel(AllPanels.CAMInspectPanel):
+		class CAMInspectPanel (AllPanels.CAMInspectPanel):
 			Index = 34
-		class SelectPanel(AllPanels.SelectPanel):
+		class SelectPanel (AllPanels.SelectPanel):
 			Index = 39
 	class FabricationTab:
 		ID = "FabricationTab"
-		class ManufacturingSourcesPanel(AllPanels.ManufacturingSourcesPanel):
+		class ManufacturingSourcesPanel (AllPanels.ManufacturingSourcesPanel):
 			Index = 40
-		class NESTPanel(AllPanels.NESTPanel):
+		class NESTPanel (AllPanels.NESTPanel):
 			Index = 43
-		class CAMJobPanel(AllPanels.CAMJobPanel):
+		class CAMJobPanel (AllPanels.CAMJobPanel):
 			Index = 0
-		class CAMWLPCPanel(AllPanels.CAMWLPCPanel):
+		class CAMWLPCPanel (AllPanels.CAMWLPCPanel):
 			Index = 10
-		class CAMActionPanel(AllPanels.CAMActionPanel):
+		class CAMActionPanel (AllPanels.CAMActionPanel):
 			Index = 30
-		class FabricationManagePanel(AllPanels.FabricationManagePanel):
+		class FabricationManagePanel (AllPanels.FabricationManagePanel):
 			Index = 41
-		class CAMInspectPanel(AllPanels.CAMInspectPanel):
+		class CAMInspectPanel (AllPanels.CAMInspectPanel):
 			Index = 34
-		class SelectPanel(AllPanels.SelectPanel):
+		class SelectPanel (AllPanels.SelectPanel):
 			Index = 39
 	class UtilitiesTab:
 		ID = "UtilitiesTab"
-		class CAMInProcessStockPanel(AllPanels.CAMInProcessStockPanel):
+		class CAMInProcessStockPanel (AllPanels.CAMInProcessStockPanel):
 			Index = 1
-		class CAMManagePanel(AllPanels.CAMManagePanel):
+		class CAMManagePanel (AllPanels.CAMManagePanel):
 			Index = 35
-		class CAMInspectPanel(AllPanels.CAMInspectPanel):
+		class CAMInspectPanel (AllPanels.CAMInspectPanel):
 			Index = 34
-		class CAMScriptsAddinsPanel(AllPanels.CAMScriptsAddinsPanel):
+		class CAMScriptsAddinsPanel (AllPanels.CAMScriptsAddinsPanel):
 			Index = 38
-		class SelectPanel(AllPanels.SelectPanel):
+		class SelectPanel (AllPanels.SelectPanel):
 			Index = 39
-		class MachineBuilderActivationPanel(AllPanels.MachineBuilderActivationPanel):
+		class MachineBuilderActivationPanel (AllPanels.MachineBuilderActivationPanel):
 			Index = 42
 	class PartAlignmentTab:
 		ID = "PartAlignmentTab"
-		class CAMPartAlignmentEditPanel(AllPanels.CAMPartAlignmentEditPanel):
+		class CAMPartAlignmentEditPanel (AllPanels.CAMPartAlignmentEditPanel):
 			Index = 21
-		class CAMPartAlignmentInspectPanel(AllPanels.CAMPartAlignmentInspectPanel):
+		class CAMPartAlignmentInspectPanel (AllPanels.CAMPartAlignmentInspectPanel):
 			Index = 22
-		class CAMPartAlignmentPostPanel(AllPanels.CAMPartAlignmentPostPanel):
+		class CAMPartAlignmentPostPanel (AllPanels.CAMPartAlignmentPostPanel):
 			Index = 23
-		class CAMPartAlignmentResultsPanel(AllPanels.CAMPartAlignmentResultsPanel):
+		class CAMPartAlignmentResultsPanel (AllPanels.CAMPartAlignmentResultsPanel):
 			Index = 25
-		class CAMPartAlignmentPostAndExitPanel(AllPanels.CAMPartAlignmentPostAndExitPanel):
+		class CAMPartAlignmentPostAndExitPanel (AllPanels.CAMPartAlignmentPostAndExitPanel):
 			Index = 27
-		class CAMPartAlignmentFinishPanel(AllPanels.CAMPartAlignmentFinishPanel):
+		class CAMPartAlignmentFinishPanel (AllPanels.CAMPartAlignmentFinishPanel):
 			Index = 28
 	class LiveAlignmentTab:
 		ID = "LiveAlignmentTab"
-		class CAMPartAlignmentEditPanel(AllPanels.CAMPartAlignmentEditPanel):
+		class CAMPartAlignmentEditPanel (AllPanels.CAMPartAlignmentEditPanel):
 			Index = 21
-		class CAMPartAlignmentInspectPanel(AllPanels.CAMPartAlignmentInspectPanel):
+		class CAMPartAlignmentInspectPanel (AllPanels.CAMPartAlignmentInspectPanel):
 			Index = 22
-		class CAMLiveAlignmentPostPanel(AllPanels.CAMLiveAlignmentPostPanel):
+		class CAMLiveAlignmentPostPanel (AllPanels.CAMLiveAlignmentPostPanel):
 			Index = 24
-		class CAMLiveAlignmentResultsPanel(AllPanels.CAMLiveAlignmentResultsPanel):
+		class CAMLiveAlignmentResultsPanel (AllPanels.CAMLiveAlignmentResultsPanel):
 			Index = 26
-		class CAMLiveAlignmentFinishPanel(AllPanels.CAMLiveAlignmentFinishPanel):
+		class CAMLiveAlignmentFinishPanel (AllPanels.CAMLiveAlignmentFinishPanel):
 			Index = 29
 	class FeaturesTab:
 		ID = "FeaturesTab"
-		class CAMGeometryFeatures(AllPanels.CAMGeometryFeatures):
+		class CAMGeometryFeatures (AllPanels.CAMGeometryFeatures):
 			Index = 37
-		class SelectPanel(AllPanels.SelectPanel):
+		class SelectPanel (AllPanels.SelectPanel):
 			Index = 39
 	class MfgSolidTab:
 		ID = "MfgSolidTab"
-		class WMDComponentsManagerPanel(AllPanels.WMDComponentsManagerPanel):
+		class WMDComponentsManagerPanel (AllPanels.WMDComponentsManagerPanel):
 			Index = 45
-		class SolidCreatePanel(AllPanels.SolidCreatePanel):
+		class SolidCreatePanel (AllPanels.SolidCreatePanel):
 			Index = 4
-		class GeneratePanel(AllPanels.GeneratePanel):
+		class GeneratePanel (AllPanels.GeneratePanel):
 			Index = 5
-		class SolidModifyPanel(AllPanels.SolidModifyPanel):
+		class SolidModifyPanel (AllPanels.SolidModifyPanel):
 			Index = 6
-		class WMDComponentsPanel(AllPanels.WMDComponentsPanel):
+		class WMDComponentsPanel (AllPanels.WMDComponentsPanel):
 			Index = 46
-		class AssemblePanel(AllPanels.AssemblePanel):
+		class AssemblePanel (AllPanels.AssemblePanel):
 			Index = 9
-		class ConstructionPanel(AllPanels.ConstructionPanel):
+		class ConstructionPanel (AllPanels.ConstructionPanel):
 			Index = 20
-		class InspectPanel(AllPanels.InspectPanel):
+		class InspectPanel (AllPanels.InspectPanel):
 			Index = 21
-		class InsertPanel(AllPanels.InsertPanel):
+		class InsertPanel (AllPanels.InsertPanel):
 			Index = 24
-		class SelectPanel(AllPanels.SelectPanel):
+		class SelectPanel (AllPanels.SelectPanel):
 			Index = 29
-		class SnapshotPanel(AllPanels.SnapshotPanel):
+		class SnapshotPanel (AllPanels.SnapshotPanel):
 			Index = 35
-		class FinishPreparePanel(AllPanels.FinishPreparePanel):
+		class FinishPreparePanel (AllPanels.FinishPreparePanel):
 			Index = 47
 	class MfgSurfaceTab:
 		ID = "MfgSurfaceTab"
-		class WMDComponentsManagerPanel(AllPanels.WMDComponentsManagerPanel):
+		class WMDComponentsManagerPanel (AllPanels.WMDComponentsManagerPanel):
 			Index = 45
-		class SurfaceCreatePanel(AllPanels.SurfaceCreatePanel):
+		class SurfaceCreatePanel (AllPanels.SurfaceCreatePanel):
 			Index = 12
-		class SurfaceModifyPanel(AllPanels.SurfaceModifyPanel):
+		class SurfaceModifyPanel (AllPanels.SurfaceModifyPanel):
 			Index = 13
-		class WMDComponentsPanel(AllPanels.WMDComponentsPanel):
+		class WMDComponentsPanel (AllPanels.WMDComponentsPanel):
 			Index = 46
-		class AssemblePanel(AllPanels.AssemblePanel):
+		class AssemblePanel (AllPanels.AssemblePanel):
 			Index = 9
-		class ConstructionPanel(AllPanels.ConstructionPanel):
+		class ConstructionPanel (AllPanels.ConstructionPanel):
 			Index = 20
-		class InspectPanel(AllPanels.InspectPanel):
+		class InspectPanel (AllPanels.InspectPanel):
 			Index = 21
-		class InsertPanel(AllPanels.InsertPanel):
+		class InsertPanel (AllPanels.InsertPanel):
 			Index = 24
-		class SelectPanel(AllPanels.SelectPanel):
+		class SelectPanel (AllPanels.SelectPanel):
 			Index = 29
-		class SnapshotPanel(AllPanels.SnapshotPanel):
+		class SnapshotPanel (AllPanels.SnapshotPanel):
 			Index = 35
-		class FinishPreparePanel(AllPanels.FinishPreparePanel):
+		class FinishPreparePanel (AllPanels.FinishPreparePanel):
 			Index = 47
 	class MfgParaMeshOuterTab:
 		ID = "MfgParaMeshOuterTab"
-		class WMDComponentsManagerPanel(AllPanels.WMDComponentsManagerPanel):
+		class WMDComponentsManagerPanel (AllPanels.WMDComponentsManagerPanel):
 			Index = 45
-		class ParaMeshCreatePanel(AllPanels.ParaMeshCreatePanel):
+		class ParaMeshCreatePanel (AllPanels.ParaMeshCreatePanel):
 			Index = 40
-		class ParaMeshPreparePanel(AllPanels.ParaMeshPreparePanel):
+		class ParaMeshPreparePanel (AllPanels.ParaMeshPreparePanel):
 			Index = 41
-		class ParaMeshModifyPanel(AllPanels.ParaMeshModifyPanel):
+		class ParaMeshModifyPanel (AllPanels.ParaMeshModifyPanel):
 			Index = 42
-		class AssemblePanel(AllPanels.AssemblePanel):
+		class AssemblePanel (AllPanels.AssemblePanel):
 			Index = 9
-		class ConstructionPanel(AllPanels.ConstructionPanel):
+		class ConstructionPanel (AllPanels.ConstructionPanel):
 			Index = 20
-		class InspectPanel(AllPanels.InspectPanel):
+		class InspectPanel (AllPanels.InspectPanel):
 			Index = 21
-		class InsertPanel(AllPanels.InsertPanel):
+		class InsertPanel (AllPanels.InsertPanel):
 			Index = 24
-		class ParaMeshSelectPanel(AllPanels.ParaMeshSelectPanel):
+		class ParaMeshSelectPanel (AllPanels.ParaMeshSelectPanel):
 			Index = 43
-		class ParaMeshExportPanel(AllPanels.ParaMeshExportPanel):
+		class ParaMeshExportPanel (AllPanels.ParaMeshExportPanel):
 			Index = 44
-		class SnapshotPanel(AllPanels.SnapshotPanel):
+		class SnapshotPanel (AllPanels.SnapshotPanel):
 			Index = 35
-		class FinishPreparePanel(AllPanels.FinishPreparePanel):
+		class FinishPreparePanel (AllPanels.FinishPreparePanel):
 			Index = 47
 	class MfgFormTab:
 		ID = "MfgFormTab"
-		class TSplinePrimitivePanel(AllPanels.TSplinePrimitivePanel):
+		class TSplinePrimitivePanel (AllPanels.TSplinePrimitivePanel):
 			Index = 14
-		class TSplineModifyPanel(AllPanels.TSplineModifyPanel):
+		class TSplineModifyPanel (AllPanels.TSplineModifyPanel):
 			Index = 15
-		class TSplineSymmetryPanel(AllPanels.TSplineSymmetryPanel):
+		class TSplineSymmetryPanel (AllPanels.TSplineSymmetryPanel):
 			Index = 16
-		class TSplineUtilitiesPanel(AllPanels.TSplineUtilitiesPanel):
+		class TSplineUtilitiesPanel (AllPanels.TSplineUtilitiesPanel):
 			Index = 17
-		class ConstructionPanel(AllPanels.ConstructionPanel):
+		class ConstructionPanel (AllPanels.ConstructionPanel):
 			Index = 20
-		class InspectPanel(AllPanels.InspectPanel):
+		class InspectPanel (AllPanels.InspectPanel):
 			Index = 21
-		class InsertPanel(AllPanels.InsertPanel):
+		class InsertPanel (AllPanels.InsertPanel):
 			Index = 24
-		class SelectPanel(AllPanels.SelectPanel):
+		class SelectPanel (AllPanels.SelectPanel):
 			Index = 29
-		class StopTSplineBaseFeaturePanel(AllPanels.StopTSplineBaseFeaturePanel):
+		class StopTSplineBaseFeaturePanel (AllPanels.StopTSplineBaseFeaturePanel):
 			Index = 33
 	class MfgToolsTab:
 		ID = "MfgToolsTab"
-		class MakePanel(AllPanels.MakePanel):
+		class MakePanel (AllPanels.MakePanel):
 			Index = 26
-		class SolidScriptsAddinsPanel(AllPanels.SolidScriptsAddinsPanel):
+		class SolidScriptsAddinsPanel (AllPanels.SolidScriptsAddinsPanel):
 			Index = 27
-		class UtilityPanel(AllPanels.UtilityPanel):
+		class UtilityPanel (AllPanels.UtilityPanel):
 			Index = 28
-		class ToolsInspectPanel(AllPanels.ToolsInspectPanel):
+		class ToolsInspectPanel (AllPanels.ToolsInspectPanel):
 			Index = 23
-		class SelectPanel(AllPanels.SelectPanel):
+		class SelectPanel (AllPanels.SelectPanel):
 			Index = 29
-		class SnapshotPanel(AllPanels.SnapshotPanel):
+		class SnapshotPanel (AllPanels.SnapshotPanel):
 			Index = 35
-		class FinishPreparePanel(AllPanels.FinishPreparePanel):
+		class FinishPreparePanel (AllPanels.FinishPreparePanel):
 			Index = 47
-	class MfgLbrPackage3DTab:
+	class MfgLbrPackageTab:
 		ID = "MfgLbrPackage3DTab"
-		class InspectPanel(AllPanels.InspectPanel):
+		class InspectPanel (AllPanels.InspectPanel):
 			Index = 21
-		class SelectPanel(AllPanels.SelectPanel):
+		class SelectPanel (AllPanels.SelectPanel):
 			Index = 29
-		class ReturnLibraryPanel(AllPanels.ReturnLibraryPanel):
+		class ReturnLibraryPanel (AllPanels.ReturnLibraryPanel):
 			Index = 25
 	class MfgBasefeatureSolidTab:
 		ID = "MfgBasefeatureSolidTab"
-		class SolidCreatePanel(AllPanels.SolidCreatePanel):
+		class SolidCreatePanel (AllPanels.SolidCreatePanel):
 			Index = 4
-		class SolidModifyPanel(AllPanels.SolidModifyPanel):
+		class SolidModifyPanel (AllPanels.SolidModifyPanel):
 			Index = 6
-		class ConstructionPanel(AllPanels.ConstructionPanel):
+		class ConstructionPanel (AllPanels.ConstructionPanel):
 			Index = 20
-		class InspectPanel(AllPanels.InspectPanel):
+		class InspectPanel (AllPanels.InspectPanel):
 			Index = 21
-		class InsertPanel(AllPanels.InsertPanel):
+		class InsertPanel (AllPanels.InsertPanel):
 			Index = 24
-		class SelectPanel(AllPanels.SelectPanel):
+		class SelectPanel (AllPanels.SelectPanel):
 			Index = 29
-		class StopBaseFeaturePanel(AllPanels.StopBaseFeaturePanel):
+		class StopBaseFeaturePanel (AllPanels.StopBaseFeaturePanel):
 			Index = 32
 	class MfgBasefeatureSurfaceTab:
 		ID = "MfgBasefeatureSurfaceTab"
-		class SurfaceCreatePanel(AllPanels.SurfaceCreatePanel):
+		class SurfaceCreatePanel (AllPanels.SurfaceCreatePanel):
 			Index = 12
-		class SurfaceModifyPanel(AllPanels.SurfaceModifyPanel):
+		class SurfaceModifyPanel (AllPanels.SurfaceModifyPanel):
 			Index = 13
-		class ConstructionPanel(AllPanels.ConstructionPanel):
+		class ConstructionPanel (AllPanels.ConstructionPanel):
 			Index = 20
-		class InspectPanel(AllPanels.InspectPanel):
+		class InspectPanel (AllPanels.InspectPanel):
 			Index = 21
-		class InsertPanel(AllPanels.InsertPanel):
+		class InsertPanel (AllPanels.InsertPanel):
 			Index = 24
-		class SelectPanel(AllPanels.SelectPanel):
+		class SelectPanel (AllPanels.SelectPanel):
 			Index = 29
-		class StopBaseFeaturePanel(AllPanels.StopBaseFeaturePanel):
+		class StopBaseFeaturePanel (AllPanels.StopBaseFeaturePanel):
 			Index = 32
 	class MfgSketchTab:
 		ID = "MfgSketchTab"
-		class SketchCreatePanel(AllPanels.SketchCreatePanel):
+		class SketchCreatePanel (AllPanels.SketchCreatePanel):
 			Index = 0
-		class SketchModifyPanel(AllPanels.SketchModifyPanel):
+		class SketchModifyPanel (AllPanels.SketchModifyPanel):
 			Index = 2
-		class SketchConstraintsPanel(AllPanels.SketchConstraintsPanel):
+		class SketchConstraintsPanel (AllPanels.SketchConstraintsPanel):
 			Index = 3
-		class InspectPanel(AllPanels.InspectPanel):
+		class InspectPanel (AllPanels.InspectPanel):
 			Index = 21
-		class InsertPanel(AllPanels.InsertPanel):
+		class InsertPanel (AllPanels.InsertPanel):
 			Index = 24
-		class SelectPanel(AllPanels.SelectPanel):
+		class SelectPanel (AllPanels.SelectPanel):
 			Index = 29
-		class StopSketchPanel(AllPanels.StopSketchPanel):
+		class StopSketchPanel (AllPanels.StopSketchPanel):
 			Index = 31
 	class MfgEditSnapshotTab:
 		ID = "MfgEditSnapshotTab"
-		class SnapshotSolidModifyPanel(AllPanels.SnapshotSolidModifyPanel):
+		class SnapshotSolidModifyPanel (AllPanels.SnapshotSolidModifyPanel):
 			Index = 37
-		class InspectPanel(AllPanels.InspectPanel):
+		class InspectPanel (AllPanels.InspectPanel):
 			Index = 21
-		class SelectPanel(AllPanels.SelectPanel):
+		class SelectPanel (AllPanels.SelectPanel):
 			Index = 29
-		class FinishSnapshotEditPanel(AllPanels.FinishSnapshotEditPanel):
+		class FinishSnapshotEditPanel (AllPanels.FinishSnapshotEditPanel):
 			Index = 36
 	class Animation:
 		ID = "Animation"
-		class StoryboardPanel(AllPanels.StoryboardPanel):
+		class StoryboardPanel (AllPanels.StoryboardPanel):
 			Index = 0
-		class ComponentPanel(AllPanels.ComponentPanel):
+		class ComponentPanel (AllPanels.ComponentPanel):
 			Index = 1
-		class AnnotationPanel(AllPanels.AnnotationPanel):
+		class AnnotationPanel (AllPanels.AnnotationPanel):
 			Index = 2
-		class PublisherViewPanel(AllPanels.PublisherViewPanel):
+		class PublisherViewPanel (AllPanels.PublisherViewPanel):
 			Index = 3
-		class PublishVideoPanel(AllPanels.PublishVideoPanel):
+		class PublishVideoPanel (AllPanels.PublishVideoPanel):
 			Index = 4
 	class SolidTab:
 		ID = "SolidTab"
-		class SolidCreatePanel(AllPanels.SolidCreatePanel):
+		class SolidCreatePanel (AllPanels.SolidCreatePanel):
 			Index = 7
-		class GeneratePanel(AllPanels.GeneratePanel):
+		class GeneratePanel (AllPanels.GeneratePanel):
 			Index = 8
-		class SolidModifyPanel(AllPanels.SolidModifyPanel):
+		class SolidModifyPanel (AllPanels.SolidModifyPanel):
 			Index = 9
-		class AssemblePanel(AllPanels.AssemblePanel):
+		class AssemblePanel (AllPanels.AssemblePanel):
 			Index = 12
-		class ConstructionPanel(AllPanels.ConstructionPanel):
+		class ConstructionPanel (AllPanels.ConstructionPanel):
 			Index = 26
-		class InspectPanel(AllPanels.InspectPanel):
+		class InspectPanel (AllPanels.InspectPanel):
 			Index = 27
-		class InsertPanel(AllPanels.InsertPanel):
+		class InsertPanel (AllPanels.InsertPanel):
 			Index = 30
-		class SelectPanel(AllPanels.SelectPanel):
+		class SelectPanel (AllPanels.SelectPanel):
 			Index = 38
-		class SnapshotPanel(AllPanels.SnapshotPanel):
+		class SnapshotPanel (AllPanels.SnapshotPanel):
 			Index = 44
 	class SurfaceTab:
 		ID = "SurfaceTab"
-		class SurfaceCreatePanel(AllPanels.SurfaceCreatePanel):
+		class SurfaceCreatePanel (AllPanels.SurfaceCreatePanel):
 			Index = 15
-		class SurfaceModifyPanel(AllPanels.SurfaceModifyPanel):
+		class SurfaceModifyPanel (AllPanels.SurfaceModifyPanel):
 			Index = 16
-		class AssemblePanel(AllPanels.AssemblePanel):
+		class AssemblePanel (AllPanels.AssemblePanel):
 			Index = 12
-		class ConstructionPanel(AllPanels.ConstructionPanel):
+		class ConstructionPanel (AllPanels.ConstructionPanel):
 			Index = 26
-		class InspectPanel(AllPanels.InspectPanel):
+		class InspectPanel (AllPanels.InspectPanel):
 			Index = 27
-		class InsertPanel(AllPanels.InsertPanel):
+		class InsertPanel (AllPanels.InsertPanel):
 			Index = 30
-		class SelectPanel(AllPanels.SelectPanel):
+		class SelectPanel (AllPanels.SelectPanel):
 			Index = 38
-		class SnapshotPanel(AllPanels.SnapshotPanel):
+		class SnapshotPanel (AllPanels.SnapshotPanel):
 			Index = 44
 	class ParaMeshOuterTab:
 		ID = "ParaMeshOuterTab"
-		class ParaMeshCreatePanel(AllPanels.ParaMeshCreatePanel):
+		class ParaMeshCreatePanel (AllPanels.ParaMeshCreatePanel):
 			Index = 57
-		class ParaMeshPreparePanel(AllPanels.ParaMeshPreparePanel):
+		class ParaMeshPreparePanel (AllPanels.ParaMeshPreparePanel):
 			Index = 58
-		class ParaMeshModifyPanel(AllPanels.ParaMeshModifyPanel):
+		class ParaMeshModifyPanel (AllPanels.ParaMeshModifyPanel):
 			Index = 59
-		class AssemblePanel(AllPanels.AssemblePanel):
+		class AssemblePanel (AllPanels.AssemblePanel):
 			Index = 12
-		class ConstructionPanel(AllPanels.ConstructionPanel):
+		class ConstructionPanel (AllPanels.ConstructionPanel):
 			Index = 26
-		class InspectPanel(AllPanels.InspectPanel):
+		class InspectPanel (AllPanels.InspectPanel):
 			Index = 27
-		class InsertPanel(AllPanels.InsertPanel):
+		class InsertPanel (AllPanels.InsertPanel):
 			Index = 30
-		class ParaMeshSelectPanel(AllPanels.ParaMeshSelectPanel):
+		class ParaMeshSelectPanel (AllPanels.ParaMeshSelectPanel):
 			Index = 60
-		class ParaMeshExportPanel(AllPanels.ParaMeshExportPanel):
+		class ParaMeshExportPanel (AllPanels.ParaMeshExportPanel):
 			Index = 61
-		class SnapshotPanel(AllPanels.SnapshotPanel):
+		class SnapshotPanel (AllPanels.SnapshotPanel):
 			Index = 44
 	class FormTab:
 		ID = "FormTab"
-		class TSplinePrimitivePanel(AllPanels.TSplinePrimitivePanel):
+		class TSplinePrimitivePanel (AllPanels.TSplinePrimitivePanel):
 			Index = 17
-		class TSplineModifyPanel(AllPanels.TSplineModifyPanel):
+		class TSplineModifyPanel (AllPanels.TSplineModifyPanel):
 			Index = 18
-		class TSplineSymmetryPanel(AllPanels.TSplineSymmetryPanel):
+		class TSplineSymmetryPanel (AllPanels.TSplineSymmetryPanel):
 			Index = 19
-		class TSplineUtilitiesPanel(AllPanels.TSplineUtilitiesPanel):
+		class TSplineUtilitiesPanel (AllPanels.TSplineUtilitiesPanel):
 			Index = 20
-		class ConstructionPanel(AllPanels.ConstructionPanel):
+		class ConstructionPanel (AllPanels.ConstructionPanel):
 			Index = 26
-		class InspectPanel(AllPanels.InspectPanel):
+		class InspectPanel (AllPanels.InspectPanel):
 			Index = 27
-		class InsertPanel(AllPanels.InsertPanel):
+		class InsertPanel (AllPanels.InsertPanel):
 			Index = 30
-		class SelectPanel(AllPanels.SelectPanel):
+		class SelectPanel (AllPanels.SelectPanel):
 			Index = 38
-		class StopTSplineBaseFeaturePanel(AllPanels.StopTSplineBaseFeaturePanel):
+		class StopTSplineBaseFeaturePanel (AllPanels.StopTSplineBaseFeaturePanel):
 			Index = 42
 	class SheetMetalTab:
 		ID = "SheetMetalTab"
-		class SheetMetalCreatePanel(AllPanels.SheetMetalCreatePanel):
+		class SheetMetalCreatePanel (AllPanels.SheetMetalCreatePanel):
 			Index = 10
-		class SheetMetalModifyPanel(AllPanels.SheetMetalModifyPanel):
+		class SheetMetalModifyPanel (AllPanels.SheetMetalModifyPanel):
 			Index = 11
-		class AssemblePanel(AllPanels.AssemblePanel):
+		class AssemblePanel (AllPanels.AssemblePanel):
 			Index = 12
-		class ConstructionPanel(AllPanels.ConstructionPanel):
+		class ConstructionPanel (AllPanels.ConstructionPanel):
 			Index = 26
-		class InspectPanel(AllPanels.InspectPanel):
+		class InspectPanel (AllPanels.InspectPanel):
 			Index = 27
-		class InsertPanel(AllPanels.InsertPanel):
+		class InsertPanel (AllPanels.InsertPanel):
 			Index = 30
-		class SelectPanel(AllPanels.SelectPanel):
+		class SelectPanel (AllPanels.SelectPanel):
 			Index = 38
-		class SheetmetalRefoldPanel(AllPanels.SheetmetalRefoldPanel):
+		class SheetmetalRefoldPanel (AllPanels.SheetmetalRefoldPanel):
 			Index = 47
-		class SnapshotPanel(AllPanels.SnapshotPanel):
+		class SnapshotPanel (AllPanels.SnapshotPanel):
 			Index = 44
 	class ToolsTab:
 		ID = "ToolsTab"
-		class MakePanel(AllPanels.MakePanel):
+		class MakePanel (AllPanels.MakePanel):
 			Index = 35
-		class NESTPanel(AllPanels.NESTPanel):
+		class NESTPanel (AllPanels.NESTPanel):
 			Index = 56
-		class SolidScriptsAddinsPanel(AllPanels.SolidScriptsAddinsPanel):
+		class SolidScriptsAddinsPanel (AllPanels.SolidScriptsAddinsPanel):
 			Index = 36
-		class UtilityPanel(AllPanels.UtilityPanel):
+		class UtilityPanel (AllPanels.UtilityPanel):
 			Index = 37
-		class ToolsInspectPanel(AllPanels.ToolsInspectPanel):
+		class ToolsInspectPanel (AllPanels.ToolsInspectPanel):
 			Index = 29
-		class SelectPanel(AllPanels.SelectPanel):
+		class SelectPanel (AllPanels.SelectPanel):
 			Index = 38
-		class SnapshotPanel(AllPanels.SnapshotPanel):
+		class SnapshotPanel (AllPanels.SnapshotPanel):
 			Index = 44
-		class thomasa88_anyShortcutPanel(AllPanels.thomasa88_anyShortcutPanel):
+		class NewPanel (AllPanels.NewPanel):
 			Index = 63
-		class NewPanel(AllPanels.NewPanel):
+		class zxynine_anyMacroPanel (AllPanels.zxynine_anyMacroPanel):
 			Index = 64
+		class thomasa88_anyShortcutPanel (AllPanels.thomasa88_anyShortcutPanel):
+			Index = 65
 	class ManageTab:
 		ID = "ManageTab"
-		class AssignPanel(AllPanels.AssignPanel):
+		class AssignPanel (AllPanels.AssignPanel):
 			Index = 54
-		class ReleasePanel(AllPanels.ReleasePanel):
+		class ReleasePanel (AllPanels.ReleasePanel):
 			Index = 55
 	class PCBTab:
 		ID = "PCBTab"
-		class PCBCreatePanel(AllPanels.PCBCreatePanel):
+		class PCBCreatePanel (AllPanels.PCBCreatePanel):
 			Index = 23
-		class PCBModifyPanel(AllPanels.PCBModifyPanel):
+		class PCBModifyPanel (AllPanels.PCBModifyPanel):
 			Index = 24
-		class ConstructionPanel(AllPanels.ConstructionPanel):
+		class ConstructionPanel (AllPanels.ConstructionPanel):
 			Index = 26
-		class InspectPanel(AllPanels.InspectPanel):
+		class InspectPanel (AllPanels.InspectPanel):
 			Index = 27
-		class InsertPanel(AllPanels.InsertPanel):
+		class InsertPanel (AllPanels.InsertPanel):
 			Index = 30
-		class SelectPanel(AllPanels.SelectPanel):
+		class SelectPanel (AllPanels.SelectPanel):
 			Index = 38
-		class StopPCBPanel(AllPanels.StopPCBPanel):
+		class StopPCBPanel (AllPanels.StopPCBPanel):
 			Index = 48
-	class PCB3DTab:
+	class PCBTab:
 		ID = "PCB3DTab"
-		class PCB3DPanel(AllPanels.PCB3DPanel):
+		class PCBPanel (AllPanels.PCBPanel):
 			Index = 25
-		class InspectPanel(AllPanels.InspectPanel):
+		class InspectPanel (AllPanels.InspectPanel):
 			Index = 27
-		class SelectPanel(AllPanels.SelectPanel):
+		class SelectPanel (AllPanels.SelectPanel):
 			Index = 38
-	class Package3DTab:
+	class PackageTab:
 		ID = "Package3DTab"
-		class Package3DPanel(AllPanels.Package3DPanel):
+		class PackagePanel (AllPanels.PackagePanel):
 			Index = 34
-		class SelectPanel(AllPanels.SelectPanel):
+		class SelectPanel (AllPanels.SelectPanel):
 			Index = 38
-		class StopPackagePanel(AllPanels.StopPackagePanel):
+		class StopPackagePanel (AllPanels.StopPackagePanel):
 			Index = 31
-	class LbrPackage3DTab:
+	class LbrPackageTab:
 		ID = "LbrPackage3DTab"
-		class PackagePanel(AllPanels.PackagePanel):
+		class PackagePanel (AllPanels.PackagePanel):
 			Index = 33
-		class InspectPanel(AllPanels.InspectPanel):
+		class InspectPanel (AllPanels.InspectPanel):
 			Index = 27
-		class SelectPanel(AllPanels.SelectPanel):
+		class SelectPanel (AllPanels.SelectPanel):
 			Index = 38
-		class ReturnLibraryPanel(AllPanels.ReturnLibraryPanel):
+		class ReturnLibraryPanel (AllPanels.ReturnLibraryPanel):
 			Index = 32
 	class BasefeatureSolidTab:
 		ID = "BasefeatureSolidTab"
-		class SolidCreatePanel(AllPanels.SolidCreatePanel):
+		class SolidCreatePanel (AllPanels.SolidCreatePanel):
 			Index = 7
-		class SolidModifyPanel(AllPanels.SolidModifyPanel):
+		class SolidModifyPanel (AllPanels.SolidModifyPanel):
 			Index = 9
-		class ConstructionPanel(AllPanels.ConstructionPanel):
+		class ConstructionPanel (AllPanels.ConstructionPanel):
 			Index = 26
-		class InspectPanel(AllPanels.InspectPanel):
+		class InspectPanel (AllPanels.InspectPanel):
 			Index = 27
-		class InsertPanel(AllPanels.InsertPanel):
+		class InsertPanel (AllPanels.InsertPanel):
 			Index = 30
-		class SelectPanel(AllPanels.SelectPanel):
+		class SelectPanel (AllPanels.SelectPanel):
 			Index = 38
-		class StopBaseFeaturePanel(AllPanels.StopBaseFeaturePanel):
+		class StopBaseFeaturePanel (AllPanels.StopBaseFeaturePanel):
 			Index = 41
 	class BasefeatureSurfaceTab:
 		ID = "BasefeatureSurfaceTab"
-		class SurfaceCreatePanel(AllPanels.SurfaceCreatePanel):
+		class SurfaceCreatePanel (AllPanels.SurfaceCreatePanel):
 			Index = 15
-		class SurfaceModifyPanel(AllPanels.SurfaceModifyPanel):
+		class SurfaceModifyPanel (AllPanels.SurfaceModifyPanel):
 			Index = 16
-		class ConstructionPanel(AllPanels.ConstructionPanel):
+		class ConstructionPanel (AllPanels.ConstructionPanel):
 			Index = 26
-		class InspectPanel(AllPanels.InspectPanel):
+		class InspectPanel (AllPanels.InspectPanel):
 			Index = 27
-		class InsertPanel(AllPanels.InsertPanel):
+		class InsertPanel (AllPanels.InsertPanel):
 			Index = 30
-		class SelectPanel(AllPanels.SelectPanel):
+		class SelectPanel (AllPanels.SelectPanel):
 			Index = 38
-		class StopBaseFeaturePanel(AllPanels.StopBaseFeaturePanel):
+		class StopBaseFeaturePanel (AllPanels.StopBaseFeaturePanel):
 			Index = 41
 	class SketchTab:
 		ID = "SketchTab"
-		class SketchCreatePanel(AllPanels.SketchCreatePanel):
+		class SketchCreatePanel (AllPanels.SketchCreatePanel):
 			Index = 3
-		class SketchModifyPanel(AllPanels.SketchModifyPanel):
+		class SketchModifyPanel (AllPanels.SketchModifyPanel):
 			Index = 5
-		class SketchConstraintsPanel(AllPanels.SketchConstraintsPanel):
+		class SketchConstraintsPanel (AllPanels.SketchConstraintsPanel):
 			Index = 6
-		class InspectPanel(AllPanels.InspectPanel):
+		class InspectPanel (AllPanels.InspectPanel):
 			Index = 27
-		class InsertPanel(AllPanels.InsertPanel):
+		class InsertPanel (AllPanels.InsertPanel):
 			Index = 30
-		class SelectPanel(AllPanels.SelectPanel):
+		class SelectPanel (AllPanels.SelectPanel):
 			Index = 38
-		class StopSketchPanel(AllPanels.StopSketchPanel):
+		class StopSketchPanel (AllPanels.StopSketchPanel):
 			Index = 40
 	class EditSnapshotTab:
 		ID = "EditSnapshotTab"
-		class SnapshotSolidModifyPanel(AllPanels.SnapshotSolidModifyPanel):
+		class SnapshotSolidModifyPanel (AllPanels.SnapshotSolidModifyPanel):
 			Index = 46
-		class InspectPanel(AllPanels.InspectPanel):
+		class InspectPanel (AllPanels.InspectPanel):
 			Index = 27
-		class SelectPanel(AllPanels.SelectPanel):
+		class SelectPanel (AllPanels.SelectPanel):
 			Index = 38
-		class FinishSnapshotEditPanel(AllPanels.FinishSnapshotEditPanel):
+		class FinishSnapshotEditPanel (AllPanels.FinishSnapshotEditPanel):
 			Index = 45
 	class PCBSketchTab:
 		ID = "PCBSketchTab"
-		class PCB3DSketchCreatePanel(AllPanels.PCB3DSketchCreatePanel):
+		class PCBSketchCreatePanel (AllPanels.PCBSketchCreatePanel):
 			Index = 4
-		class SketchModifyPanel(AllPanels.SketchModifyPanel):
+		class SketchModifyPanel (AllPanels.SketchModifyPanel):
 			Index = 5
-		class SketchConstraintsPanel(AllPanels.SketchConstraintsPanel):
+		class SketchConstraintsPanel (AllPanels.SketchConstraintsPanel):
 			Index = 6
-		class InspectPanel(AllPanels.InspectPanel):
+		class InspectPanel (AllPanels.InspectPanel):
 			Index = 27
-		class InsertPanel(AllPanels.InsertPanel):
+		class InsertPanel (AllPanels.InsertPanel):
 			Index = 30
-		class SelectPanel(AllPanels.SelectPanel):
+		class SelectPanel (AllPanels.SelectPanel):
 			Index = 38
-		class StopSketchPanel(AllPanels.StopSketchPanel):
+		class StopSketchPanel (AllPanels.StopSketchPanel):
 			Index = 40
 	class PCBBasefeatureSolidTab:
 		ID = "PCBBasefeatureSolidTab"
-		class InspectPanel(AllPanels.InspectPanel):
+		class InspectPanel (AllPanels.InspectPanel):
 			Index = 27
-		class SelectPanel(AllPanels.SelectPanel):
+		class SelectPanel (AllPanels.SelectPanel):
 			Index = 38
-		class StopBaseFeaturePanel(AllPanels.StopBaseFeaturePanel):
+		class StopBaseFeaturePanel (AllPanels.StopBaseFeaturePanel):
 			Index = 41
 	class RenderTab:
 		ID = "RenderTab"
-		class RenderSetupPanel(AllPanels.RenderSetupPanel):
+		class RenderSetupPanel (AllPanels.RenderSetupPanel):
 			Index = 50
-		class InCanvasRenderPanel(AllPanels.InCanvasRenderPanel):
+		class InCanvasRenderPanel (AllPanels.InCanvasRenderPanel):
 			Index = 51
-		class RenderPanel(AllPanels.RenderPanel):
+		class RenderPanel (AllPanels.RenderPanel):
 			Index = 52
 	class ParaMeshBaseFeatureTab:
 		ID = "ParaMeshBaseFeatureTab"
-		class ParaMeshPreparePanel(AllPanels.ParaMeshPreparePanel):
+		class ParaMeshPreparePanel (AllPanels.ParaMeshPreparePanel):
 			Index = 58
-		class ParaMeshModifyPanel(AllPanels.ParaMeshModifyPanel):
+		class ParaMeshModifyPanel (AllPanels.ParaMeshModifyPanel):
 			Index = 59
-		class AssemblePanel(AllPanels.AssemblePanel):
+		class AssemblePanel (AllPanels.AssemblePanel):
 			Index = 12
-		class ConstructionPanel(AllPanels.ConstructionPanel):
+		class ConstructionPanel (AllPanels.ConstructionPanel):
 			Index = 26
-		class InspectPanel(AllPanels.InspectPanel):
+		class InspectPanel (AllPanels.InspectPanel):
 			Index = 27
-		class ParaMeshSelectPanel(AllPanels.ParaMeshSelectPanel):
+		class ParaMeshSelectPanel (AllPanels.ParaMeshSelectPanel):
 			Index = 60
-		class ParaMeshExportPanel(AllPanels.ParaMeshExportPanel):
+		class ParaMeshExportPanel (AllPanels.ParaMeshExportPanel):
 			Index = 61
-		class ParaMeshBaseFeatureStopPanel(AllPanels.ParaMeshBaseFeatureStopPanel):
+		class ParaMeshBaseFeatureStopPanel (AllPanels.ParaMeshBaseFeatureStopPanel):
 			Index = 62
 	class FusionDocTab:
 		ID = "FusionDocTab"
-		class ViewsPanel(AllPanels.ViewsPanel):
+		class ViewsPanel (AllPanels.ViewsPanel):
 			Index = 0
-		class DrawingPanel(AllPanels.DrawingPanel):
+		class DrawingPanel (AllPanels.DrawingPanel):
 			Index = 1
-		class ModifyPanel(AllPanels.ModifyPanel):
+		class ModifyPanel (AllPanels.ModifyPanel):
 			Index = 2
-		class GeometryPanel(AllPanels.GeometryPanel):
+		class GeometryPanel (AllPanels.GeometryPanel):
 			Index = 3
-		class DimensionsPanel(AllPanels.DimensionsPanel):
+		class DimensionsPanel (AllPanels.DimensionsPanel):
 			Index = 4
-		class TextPanel(AllPanels.TextPanel):
+		class TextPanel (AllPanels.TextPanel):
 			Index = 5
-		class InspectPanel(AllPanels.InspectPanel):
+		class InspectPanel (AllPanels.InspectPanel):
 			Index = 6
-		class SymbolsPanel(AllPanels.SymbolsPanel):
+		class SymbolsPanel (AllPanels.SymbolsPanel):
 			Index = 7
-		class InsertPanel(AllPanels.InsertPanel):
+		class InsertPanel (AllPanels.InsertPanel):
 			Index = 8
-		class BillOfMaterialsPanel(AllPanels.BillOfMaterialsPanel):
+		class BillOfMaterialsPanel (AllPanels.BillOfMaterialsPanel):
 			Index = 9
-		class BlockPanel(AllPanels.BlockPanel):
+		class BlockPanel (AllPanels.BlockPanel):
 			Index = 10
-		class StopSketchEditPanel(AllPanels.StopSketchEditPanel):
+		class StopSketchEditPanel (AllPanels.StopSketchEditPanel):
 			Index = 13
-		class OutputPanel(AllPanels.OutputPanel):
+		class OutputPanel (AllPanels.OutputPanel):
 			Index = 14
 	class ManageTab:
 		ID = "ManageTab"
-		class AssignPanel(AllPanels.AssignPanel):
+		class AssignPanel (AllPanels.AssignPanel):
 			Index = 15
-		class ReleasePanel(AllPanels.ReleasePanel):
+		class ReleasePanel (AllPanels.ReleasePanel):
 			Index = 16
 	class TitleBlockTab:
 		ID = "TitleBlockTab"
-		class DrawingPanel(AllPanels.DrawingPanel):
+		class DrawingPanel (AllPanels.DrawingPanel):
 			Index = 1
-		class ModifyPanel(AllPanels.ModifyPanel):
+		class ModifyPanel (AllPanels.ModifyPanel):
 			Index = 2
-		class TextPanel(AllPanels.TextPanel):
+		class TextPanel (AllPanels.TextPanel):
 			Index = 5
-		class InspectPanel(AllPanels.InspectPanel):
+		class InspectPanel (AllPanels.InspectPanel):
 			Index = 6
-		class InsertPanel(AllPanels.InsertPanel):
+		class InsertPanel (AllPanels.InsertPanel):
 			Index = 8
-		class StopBlockEditPanel(AllPanels.StopBlockEditPanel):
+		class StopBlockEditPanel (AllPanels.StopBlockEditPanel):
 			Index = 11
 	class BorderTab:
 		ID = "BorderTab"
-		class DrawingPanel(AllPanels.DrawingPanel):
+		class DrawingPanel (AllPanels.DrawingPanel):
 			Index = 1
-		class ModifyPanel(AllPanels.ModifyPanel):
+		class ModifyPanel (AllPanels.ModifyPanel):
 			Index = 2
-		class TextPanel(AllPanels.TextPanel):
+		class TextPanel (AllPanels.TextPanel):
 			Index = 5
-		class InspectPanel(AllPanels.InspectPanel):
+		class InspectPanel (AllPanels.InspectPanel):
 			Index = 6
-		class InsertPanel(AllPanels.InsertPanel):
+		class InsertPanel (AllPanels.InsertPanel):
 			Index = 8
-		class StopBorderEditPanel(AllPanels.StopBorderEditPanel):
+		class StopBorderEditPanel (AllPanels.StopBorderEditPanel):
 			Index = 12
 	class SketchTab:
 		ID = "SketchTab"
-		class DrawingPanel(AllPanels.DrawingPanel):
+		class DrawingPanel (AllPanels.DrawingPanel):
 			Index = 1
-		class ModifyPanel(AllPanels.ModifyPanel):
+		class ModifyPanel (AllPanels.ModifyPanel):
 			Index = 2
-		class TextPanel(AllPanels.TextPanel):
+		class TextPanel (AllPanels.TextPanel):
 			Index = 5
-		class InspectPanel(AllPanels.InspectPanel):
+		class InspectPanel (AllPanels.InspectPanel):
 			Index = 6
-		class InsertPanel(AllPanels.InsertPanel):
+		class InsertPanel (AllPanels.InsertPanel):
 			Index = 8
-		class StopSketchEditPanel(AllPanels.StopSketchEditPanel):
+		class StopSketchEditPanel (AllPanels.StopSketchEditPanel):
 			Index = 13
 	class GenSolidTab:
 		ID = "GenSolidTab"
-		class SolidCreatePanel(AllPanels.SolidCreatePanel):
+		class SolidCreatePanel (AllPanels.SolidCreatePanel):
 			Index = 0
-		class SolidModifyPanel(AllPanels.SolidModifyPanel):
+		class SolidModifyPanel (AllPanels.SolidModifyPanel):
 			Index = 1
-		class ConstructionPanel(AllPanels.ConstructionPanel):
+		class ConstructionPanel (AllPanels.ConstructionPanel):
 			Index = 2
-		class SketchInspectPanel(AllPanels.SketchInspectPanel):
+		class SketchInspectPanel (AllPanels.SketchInspectPanel):
 			Index = 7
-		class EditModelSelectPanel(AllPanels.EditModelSelectPanel):
+		class EditModelSelectPanel (AllPanels.EditModelSelectPanel):
 			Index = 17
-		class FinishEditModelPanel(AllPanels.FinishEditModelPanel):
+		class FinishEditModelPanel (AllPanels.FinishEditModelPanel):
 			Index = 18
 	class GenSurfaceTab:
 		ID = "GenSurfaceTab"
-		class SurfaceCreatePanel(AllPanels.SurfaceCreatePanel):
+		class SurfaceCreatePanel (AllPanels.SurfaceCreatePanel):
 			Index = 3
-		class SurfaceModifyPanel(AllPanels.SurfaceModifyPanel):
+		class SurfaceModifyPanel (AllPanels.SurfaceModifyPanel):
 			Index = 4
-		class ConstructionPanel(AllPanels.ConstructionPanel):
+		class ConstructionPanel (AllPanels.ConstructionPanel):
 			Index = 2
-		class SketchInspectPanel(AllPanels.SketchInspectPanel):
+		class SketchInspectPanel (AllPanels.SketchInspectPanel):
 			Index = 7
-		class EditModelSelectPanel(AllPanels.EditModelSelectPanel):
+		class EditModelSelectPanel (AllPanels.EditModelSelectPanel):
 			Index = 17
-		class FinishEditModelPanel(AllPanels.FinishEditModelPanel):
+		class FinishEditModelPanel (AllPanels.FinishEditModelPanel):
 			Index = 18
 	class GenSketchTab:
 		ID = "GenSketchTab"
-		class SketchCreatePanel(AllPanels.SketchCreatePanel):
+		class SketchCreatePanel (AllPanels.SketchCreatePanel):
 			Index = 10
-		class SketchModifyPanel(AllPanels.SketchModifyPanel):
+		class SketchModifyPanel (AllPanels.SketchModifyPanel):
 			Index = 11
-		class SketchConstraintsPanel(AllPanels.SketchConstraintsPanel):
+		class SketchConstraintsPanel (AllPanels.SketchConstraintsPanel):
 			Index = 12
-		class SketchInspectPanel(AllPanels.SketchInspectPanel):
+		class SketchInspectPanel (AllPanels.SketchInspectPanel):
 			Index = 7
-		class InsertPanel(AllPanels.InsertPanel):
+		class InsertPanel (AllPanels.InsertPanel):
 			Index = 9
-		class SelectPanel(AllPanels.SelectPanel):
+		class SelectPanel (AllPanels.SelectPanel):
 			Index = 8
-		class StopSketchPanel(AllPanels.StopSketchPanel):
+		class StopSketchPanel (AllPanels.StopSketchPanel):
 			Index = 13
 	class SimSolidTab:
 		ID = "SimSolidTab"
-		class SolidCreatePanel(AllPanels.SolidCreatePanel):
+		class SolidCreatePanel (AllPanels.SolidCreatePanel):
 			Index = 0
-		class SolidModifyPanel(AllPanels.SolidModifyPanel):
+		class SolidModifyPanel (AllPanels.SolidModifyPanel):
 			Index = 1
-		class ConstructionPanel(AllPanels.ConstructionPanel):
+		class ConstructionPanel (AllPanels.ConstructionPanel):
 			Index = 2
-		class SketchInspectPanel(AllPanels.SketchInspectPanel):
+		class SketchInspectPanel (AllPanels.SketchInspectPanel):
 			Index = 7
-		class SimplifySelectPanel(AllPanels.SimplifySelectPanel):
+		class SimplifySelectPanel (AllPanels.SimplifySelectPanel):
 			Index = 17
-		class FinishSimplifyPanel(AllPanels.FinishSimplifyPanel):
+		class FinishSimplifyPanel (AllPanels.FinishSimplifyPanel):
 			Index = 18
 	class SimSurfaceTab:
 		ID = "SimSurfaceTab"
-		class SurfaceCreatePanel(AllPanels.SurfaceCreatePanel):
+		class SurfaceCreatePanel (AllPanels.SurfaceCreatePanel):
 			Index = 3
-		class SurfaceModifyPanel(AllPanels.SurfaceModifyPanel):
+		class SurfaceModifyPanel (AllPanels.SurfaceModifyPanel):
 			Index = 4
-		class ConstructionPanel(AllPanels.ConstructionPanel):
+		class ConstructionPanel (AllPanels.ConstructionPanel):
 			Index = 2
-		class SketchInspectPanel(AllPanels.SketchInspectPanel):
+		class SketchInspectPanel (AllPanels.SketchInspectPanel):
 			Index = 7
-		class SimplifySelectPanel(AllPanels.SimplifySelectPanel):
+		class SimplifySelectPanel (AllPanels.SimplifySelectPanel):
 			Index = 17
-		class FinishSimplifyPanel(AllPanels.FinishSimplifyPanel):
+		class FinishSimplifyPanel (AllPanels.FinishSimplifyPanel):
 			Index = 18
 	class IdealizeTab:
 		ID = "IdealizeTab"
-		class SurfaceCreatePanel(AllPanels.SurfaceCreatePanel):
+		class SurfaceCreatePanel (AllPanels.SurfaceCreatePanel):
 			Index = 3
-		class IdealizeModifyPanel(AllPanels.IdealizeModifyPanel):
+		class IdealizeModifyPanel (AllPanels.IdealizeModifyPanel):
 			Index = 5
-		class ShellsPanel(AllPanels.ShellsPanel):
+		class ShellsPanel (AllPanels.ShellsPanel):
 			Index = 6
-		class ConstructionPanel(AllPanels.ConstructionPanel):
+		class ConstructionPanel (AllPanels.ConstructionPanel):
 			Index = 2
-		class SketchInspectPanel(AllPanels.SketchInspectPanel):
+		class SketchInspectPanel (AllPanels.SketchInspectPanel):
 			Index = 7
-		class SimplifySelectPanel(AllPanels.SimplifySelectPanel):
+		class SimplifySelectPanel (AllPanels.SimplifySelectPanel):
 			Index = 17
-		class FinishSimplifyPanel(AllPanels.FinishSimplifyPanel):
+		class FinishSimplifyPanel (AllPanels.FinishSimplifyPanel):
 			Index = 18
 	class SketchTab:
 		ID = "SketchTab"
-		class SketchCreatePanel(AllPanels.SketchCreatePanel):
+		class SketchCreatePanel (AllPanels.SketchCreatePanel):
 			Index = 10
-		class SketchModifyPanel(AllPanels.SketchModifyPanel):
+		class SketchModifyPanel (AllPanels.SketchModifyPanel):
 			Index = 11
-		class SketchConstraintsPanel(AllPanels.SketchConstraintsPanel):
+		class SketchConstraintsPanel (AllPanels.SketchConstraintsPanel):
 			Index = 12
-		class SketchInspectPanel(AllPanels.SketchInspectPanel):
+		class SketchInspectPanel (AllPanels.SketchInspectPanel):
 			Index = 7
-		class InsertPanel(AllPanels.InsertPanel):
+		class InsertPanel (AllPanels.InsertPanel):
 			Index = 9
-		class SelectPanel(AllPanels.SelectPanel):
+		class SelectPanel (AllPanels.SelectPanel):
 			Index = 8
-		class StopSketchPanel(AllPanels.StopSketchPanel):
+		class StopSketchPanel (AllPanels.StopSketchPanel):
 			Index = 13
 	class ToolsTab:
 		ID = "ToolsTab"
-		class ReturnPanel(AllPanels.ReturnPanel):
+		class ReturnPanel (AllPanels.ReturnPanel):
 			Index = 19
 	class SimSetupTab:
 		ID = "SimSetupTab"
-		class StudyPanel(AllPanels.StudyPanel):
+		class StudyPanel (AllPanels.StudyPanel):
 			Index = 12
-		class SimplifyPanel(AllPanels.SimplifyPanel):
+		class SimplifyPanel (AllPanels.SimplifyPanel):
 			Index = 13
-		class MaterialsPanel(AllPanels.MaterialsPanel):
+		class MaterialsPanel (AllPanels.MaterialsPanel):
 			Index = 14
-		class ConstraintsPanel(AllPanels.ConstraintsPanel):
+		class ConstraintsPanel (AllPanels.ConstraintsPanel):
 			Index = 26
-		class LoadsPanel(AllPanels.LoadsPanel):
+		class LoadsPanel (AllPanels.LoadsPanel):
 			Index = 27
-		class ContactsPanel(AllPanels.ContactsPanel):
+		class ContactsPanel (AllPanels.ContactsPanel):
 			Index = 28
-		class DisplayPanel(AllPanels.DisplayPanel):
+		class DisplayPanel (AllPanels.DisplayPanel):
 			Index = 15
-		class OptimizationPanel(AllPanels.OptimizationPanel):
+		class OptimizationPanel (AllPanels.OptimizationPanel):
 			Index = 29
-		class ManagePanel(AllPanels.ManagePanel):
+		class ManagePanel (AllPanels.ManagePanel):
 			Index = 5
-		class SolvePanel(AllPanels.SolvePanel):
+		class SolvePanel (AllPanels.SolvePanel):
 			Index = 3
-		class AnsysPanel(AllPanels.AnsysPanel):
+		class AnsysPanel (AllPanels.AnsysPanel):
 			Index = 4
-		class ResultsCmdPanel(AllPanels.ResultsCmdPanel):
+		class ResultsCmdPanel (AllPanels.ResultsCmdPanel):
 			Index = 31
-		class InspectPanel(AllPanels.InspectPanel):
+		class InspectPanel (AllPanels.InspectPanel):
 			Index = 18
-		class SelectPanel(AllPanels.SelectPanel):
+		class SelectPanel (AllPanels.SelectPanel):
 			Index = 20
 	class SimResultsTab:
 		ID = "SimResultsTab"
-		class ResultToolsPanel(AllPanels.ResultToolsPanel):
+		class ResultToolsPanel (AllPanels.ResultToolsPanel):
 			Index = 0
-		class ComparePanel(AllPanels.ComparePanel):
+		class ComparePanel (AllPanels.ComparePanel):
 			Index = 1
-		class DeformationPanel(AllPanels.DeformationPanel):
+		class DeformationPanel (AllPanels.DeformationPanel):
 			Index = 2
-		class ResultsDisplayPanel(AllPanels.ResultsDisplayPanel):
+		class ResultsDisplayPanel (AllPanels.ResultsDisplayPanel):
 			Index = 16
-		class ResultsManagePanel(AllPanels.ResultsManagePanel):
+		class ResultsManagePanel (AllPanels.ResultsManagePanel):
 			Index = 6
-		class ResultsInspectPanel(AllPanels.ResultsInspectPanel):
+		class ResultsInspectPanel (AllPanels.ResultsInspectPanel):
 			Index = 19
-		class SelectPanel(AllPanels.SelectPanel):
+		class SelectPanel (AllPanels.SelectPanel):
 			Index = 20
-		class FinishResultsPanel(AllPanels.FinishResultsPanel):
+		class FinishResultsPanel (AllPanels.FinishResultsPanel):
 			Index = 22
 	class CompareTab:
 		ID = "CompareTab"
-		class SynchronizePanel(AllPanels.SynchronizePanel):
+		class SynchronizePanel (AllPanels.SynchronizePanel):
 			Index = 7
-		class ResultsAnimatePanel(AllPanels.ResultsAnimatePanel):
+		class ResultsAnimatePanel (AllPanels.ResultsAnimatePanel):
 			Index = 8
-		class ResultsOptionsPanel(AllPanels.ResultsOptionsPanel):
+		class ResultsOptionsPanel (AllPanels.ResultsOptionsPanel):
 			Index = 9
-		class CompareLayoutsPanel(AllPanels.CompareLayoutsPanel):
+		class CompareLayoutsPanel (AllPanels.CompareLayoutsPanel):
 			Index = 10
-		class PostMeshPanel(AllPanels.PostMeshPanel):
+		class PostMeshPanel (AllPanels.PostMeshPanel):
 			Index = 11
-		class FinishSimComparePanel(AllPanels.FinishSimComparePanel):
+		class FinishSimComparePanel (AllPanels.FinishSimComparePanel):
 			Index = 21
-class Toolbars:
-	class ActiveDocumentsToolbar:
-		ID = "ActiveDocumentsToolbar"
-	class ActiveViewToolbar:
-		ID = "ActiveViewToolbar"
-	class EIPToolbar:
-		ID = "EIPToolbar"
-	class ElectronNavToolbar:
-		ID = "Electron::NavToolbar"
-	class ElectronicDesignNavToolbar:
-		ID = "ElectronicDesign::NavToolbar"
-	class FusionDocNavToolbar:
-		ID = "FusionDocNavToolbar"
-	class MessageTray:
-		ID = "MessageTray"
-	class NavToolbar:
-		ID = "NavToolbar"
-	class QAT:
-		ID = "QAT"
-	class QATRight:
-		ID = "QATRight"
 class WorkSpaces:
 	class FusionSolidEnvironment:
 		ID = "FusionSolidEnvironment"
 		class Tabs:
-			class SolidTab(AllTabs.SolidTab):
+			class SolidTab (AllTabs.SolidTab):
 				Index = 0
-			class SurfaceTab(AllTabs.SurfaceTab):
+			class SurfaceTab (AllTabs.SurfaceTab):
 				Index = 1
-			class ParaMeshOuterTab(AllTabs.ParaMeshOuterTab):
+			class ParaMeshOuterTab (AllTabs.ParaMeshOuterTab):
 				Index = 18
-			class FormTab(AllTabs.FormTab):
+			class FormTab (AllTabs.FormTab):
 				Index = 2
-			class SheetMetalTab(AllTabs.SheetMetalTab):
+			class SheetMetalTab (AllTabs.SheetMetalTab):
 				Index = 3
-			class ToolsTab(AllTabs.ToolsTab):
+			class ToolsTab (AllTabs.ToolsTab):
 				Index = 4
-			class ManageTab(AllTabs.ManageTab):
+			class ManageTab (AllTabs.ManageTab):
 				Index = 5
-			class PCBTab(AllTabs.PCBTab):
+			class PCBTab (AllTabs.PCBTab):
 				Index = 6
-			class Package3DTab(AllTabs.Package3DTab):
+			class PackageTab (AllTabs.PackageTab):
 				Index = 8
-			class BasefeatureSolidTab(AllTabs.BasefeatureSolidTab):
+			class BasefeatureSolidTab (AllTabs.BasefeatureSolidTab):
 				Index = 10
-			class BasefeatureSurfaceTab(AllTabs.BasefeatureSurfaceTab):
+			class BasefeatureSurfaceTab (AllTabs.BasefeatureSurfaceTab):
 				Index = 11
-			class SketchTab(AllTabs.SketchTab):
+			class SketchTab (AllTabs.SketchTab):
 				Index = 12
-			class EditSnapshotTab(AllTabs.EditSnapshotTab):
+			class EditSnapshotTab (AllTabs.EditSnapshotTab):
 				Index = 13
-			class ParaMeshBaseFeatureTab(AllTabs.ParaMeshBaseFeatureTab):
+			class ParaMeshBaseFeatureTab (AllTabs.ParaMeshBaseFeatureTab):
 				Index = 19
 		class Panels:
 			FilePanel = AllPanels.FilePanel
 			DiagnosticsPanel = AllPanels.DiagnosticsPanel
 			UIDemo = AllPanels.UIDemo
 			SketchCreatePanel = AllPanels.SketchCreatePanel
-			PCB3DSketchCreatePanel = AllPanels.PCB3DSketchCreatePanel
+			PCBSketchCreatePanel = AllPanels.PCBSketchCreatePanel
 			SketchModifyPanel = AllPanels.SketchModifyPanel
 			SketchConstraintsPanel = AllPanels.SketchConstraintsPanel
 			SolidCreatePanel = AllPanels.SolidCreatePanel
@@ -6201,7 +6555,7 @@ class WorkSpaces:
 			MeshModifyPanel = AllPanels.MeshModifyPanel
 			PCBCreatePanel = AllPanels.PCBCreatePanel
 			PCBModifyPanel = AllPanels.PCBModifyPanel
-			PCB3DPanel = AllPanels.PCB3DPanel
+			PCBPanel = AllPanels.PCBPanel
 			ConstructionPanel = AllPanels.ConstructionPanel
 			InspectPanel = AllPanels.InspectPanel
 			InspectMeshPanel = AllPanels.InspectMeshPanel
@@ -6210,7 +6564,7 @@ class WorkSpaces:
 			StopPackagePanel = AllPanels.StopPackagePanel
 			ReturnLibraryPanel = AllPanels.ReturnLibraryPanel
 			PackagePanel = AllPanels.PackagePanel
-			Package3DPanel = AllPanels.Package3DPanel
+			PackagePanel = AllPanels.PackagePanel
 			MakePanel = AllPanels.MakePanel
 			SolidScriptsAddinsPanel = AllPanels.SolidScriptsAddinsPanel
 			UtilityPanel = AllPanels.UtilityPanel
@@ -6240,15 +6594,16 @@ class WorkSpaces:
 			ParaMeshSelectPanel = AllPanels.ParaMeshSelectPanel
 			ParaMeshExportPanel = AllPanels.ParaMeshExportPanel
 			ParaMeshBaseFeatureStopPanel = AllPanels.ParaMeshBaseFeatureStopPanel
+			zxynine_anyMacroPanel = AllPanels.zxynine_anyMacroPanel
 			thomasa88_anyShortcutPanel = AllPanels.thomasa88_anyShortcutPanel
 	class GenerativeEnvironment:
 		ID = "GenerativeEnvironment"
 		class Tabs:
-			class DefineTab(AllTabs.DefineTab):
+			class DefineTab (AllTabs.DefineTab):
 				Index = 0
-			class ExploreTab(AllTabs.ExploreTab):
+			class ExploreTab (AllTabs.ExploreTab):
 				Index = 1
-			class OutcomeViewTab(AllTabs.OutcomeViewTab):
+			class OutcomeViewTab (AllTabs.OutcomeViewTab):
 				Index = 2
 		class Panels:
 			FilePanel = AllPanels.FilePanel
@@ -6276,40 +6631,40 @@ class WorkSpaces:
 	class PCBEnvironment:
 		ID = "PCBEnvironment"
 		class Tabs:
-			class SolidTab(AllTabs.SolidTab):
+			class SolidTab (AllTabs.SolidTab):
 				Index = 0
-			class SurfaceTab(AllTabs.SurfaceTab):
+			class SurfaceTab (AllTabs.SurfaceTab):
 				Index = 1
-			class ParaMeshOuterTab(AllTabs.ParaMeshOuterTab):
+			class ParaMeshOuterTab (AllTabs.ParaMeshOuterTab):
 				Index = 18
-			class FormTab(AllTabs.FormTab):
+			class FormTab (AllTabs.FormTab):
 				Index = 2
-			class SheetMetalTab(AllTabs.SheetMetalTab):
+			class SheetMetalTab (AllTabs.SheetMetalTab):
 				Index = 3
-			class ToolsTab(AllTabs.ToolsTab):
+			class ToolsTab (AllTabs.ToolsTab):
 				Index = 4
-			class ManageTab(AllTabs.ManageTab):
+			class ManageTab (AllTabs.ManageTab):
 				Index = 5
-			class PCBTab(AllTabs.PCBTab):
+			class PCBTab (AllTabs.PCBTab):
 				Index = 6
-			class Package3DTab(AllTabs.Package3DTab):
+			class PackageTab (AllTabs.PackageTab):
 				Index = 8
-			class BasefeatureSolidTab(AllTabs.BasefeatureSolidTab):
+			class BasefeatureSolidTab (AllTabs.BasefeatureSolidTab):
 				Index = 10
-			class BasefeatureSurfaceTab(AllTabs.BasefeatureSurfaceTab):
+			class BasefeatureSurfaceTab (AllTabs.BasefeatureSurfaceTab):
 				Index = 11
-			class SketchTab(AllTabs.SketchTab):
+			class SketchTab (AllTabs.SketchTab):
 				Index = 12
-			class EditSnapshotTab(AllTabs.EditSnapshotTab):
+			class EditSnapshotTab (AllTabs.EditSnapshotTab):
 				Index = 13
-			class ParaMeshBaseFeatureTab(AllTabs.ParaMeshBaseFeatureTab):
+			class ParaMeshBaseFeatureTab (AllTabs.ParaMeshBaseFeatureTab):
 				Index = 19
 		class Panels:
 			FilePanel = AllPanels.FilePanel
 			DiagnosticsPanel = AllPanels.DiagnosticsPanel
 			UIDemo = AllPanels.UIDemo
 			SketchCreatePanel = AllPanels.SketchCreatePanel
-			PCB3DSketchCreatePanel = AllPanels.PCB3DSketchCreatePanel
+			PCBSketchCreatePanel = AllPanels.PCBSketchCreatePanel
 			SketchModifyPanel = AllPanels.SketchModifyPanel
 			SketchConstraintsPanel = AllPanels.SketchConstraintsPanel
 			SolidCreatePanel = AllPanels.SolidCreatePanel
@@ -6330,7 +6685,7 @@ class WorkSpaces:
 			MeshModifyPanel = AllPanels.MeshModifyPanel
 			PCBCreatePanel = AllPanels.PCBCreatePanel
 			PCBModifyPanel = AllPanels.PCBModifyPanel
-			PCB3DPanel = AllPanels.PCB3DPanel
+			PCBPanel = AllPanels.PCBPanel
 			ConstructionPanel = AllPanels.ConstructionPanel
 			InspectPanel = AllPanels.InspectPanel
 			InspectMeshPanel = AllPanels.InspectMeshPanel
@@ -6339,7 +6694,7 @@ class WorkSpaces:
 			StopPackagePanel = AllPanels.StopPackagePanel
 			ReturnLibraryPanel = AllPanels.ReturnLibraryPanel
 			PackagePanel = AllPanels.PackagePanel
-			Package3DPanel = AllPanels.Package3DPanel
+			PackagePanel = AllPanels.PackagePanel
 			MakePanel = AllPanels.MakePanel
 			SolidScriptsAddinsPanel = AllPanels.SolidScriptsAddinsPanel
 			UtilityPanel = AllPanels.UtilityPanel
@@ -6369,22 +6724,23 @@ class WorkSpaces:
 			ParaMeshSelectPanel = AllPanels.ParaMeshSelectPanel
 			ParaMeshExportPanel = AllPanels.ParaMeshExportPanel
 			ParaMeshBaseFeatureStopPanel = AllPanels.ParaMeshBaseFeatureStopPanel
+			zxynine_anyMacroPanel = AllPanels.zxynine_anyMacroPanel
 			thomasa88_anyShortcutPanel = AllPanels.thomasa88_anyShortcutPanel
-	class PCB3DEnvironment:
+	class PCBEnvironment:
 		ID = "PCB3DEnvironment"
 		class Tabs:
-			class PCB3DTab(AllTabs.PCB3DTab):
+			class PCBTab (AllTabs.PCBTab):
 				Index = 7
-			class PCBSketchTab(AllTabs.PCBSketchTab):
+			class PCBSketchTab (AllTabs.PCBSketchTab):
 				Index = 14
-			class PCBBasefeatureSolidTab(AllTabs.PCBBasefeatureSolidTab):
+			class PCBBasefeatureSolidTab (AllTabs.PCBBasefeatureSolidTab):
 				Index = 15
 		class Panels:
 			FilePanel = AllPanels.FilePanel
 			DiagnosticsPanel = AllPanels.DiagnosticsPanel
 			UIDemo = AllPanels.UIDemo
 			SketchCreatePanel = AllPanels.SketchCreatePanel
-			PCB3DSketchCreatePanel = AllPanels.PCB3DSketchCreatePanel
+			PCBSketchCreatePanel = AllPanels.PCBSketchCreatePanel
 			SketchModifyPanel = AllPanels.SketchModifyPanel
 			SketchConstraintsPanel = AllPanels.SketchConstraintsPanel
 			SolidCreatePanel = AllPanels.SolidCreatePanel
@@ -6405,7 +6761,7 @@ class WorkSpaces:
 			MeshModifyPanel = AllPanels.MeshModifyPanel
 			PCBCreatePanel = AllPanels.PCBCreatePanel
 			PCBModifyPanel = AllPanels.PCBModifyPanel
-			PCB3DPanel = AllPanels.PCB3DPanel
+			PCBPanel = AllPanels.PCBPanel
 			ConstructionPanel = AllPanels.ConstructionPanel
 			InspectPanel = AllPanels.InspectPanel
 			InspectMeshPanel = AllPanels.InspectMeshPanel
@@ -6414,7 +6770,7 @@ class WorkSpaces:
 			StopPackagePanel = AllPanels.StopPackagePanel
 			ReturnLibraryPanel = AllPanels.ReturnLibraryPanel
 			PackagePanel = AllPanels.PackagePanel
-			Package3DPanel = AllPanels.Package3DPanel
+			PackagePanel = AllPanels.PackagePanel
 			MakePanel = AllPanels.MakePanel
 			SolidScriptsAddinsPanel = AllPanels.SolidScriptsAddinsPanel
 			UtilityPanel = AllPanels.UtilityPanel
@@ -6444,44 +6800,45 @@ class WorkSpaces:
 			ParaMeshSelectPanel = AllPanels.ParaMeshSelectPanel
 			ParaMeshExportPanel = AllPanels.ParaMeshExportPanel
 			ParaMeshBaseFeatureStopPanel = AllPanels.ParaMeshBaseFeatureStopPanel
+			zxynine_anyMacroPanel = AllPanels.zxynine_anyMacroPanel
 			thomasa88_anyShortcutPanel = AllPanels.thomasa88_anyShortcutPanel
-	class Package3DEnvironment:
+	class PackageEnvironment:
 		ID = "Package3DEnvironment"
 		class Tabs:
-			class SolidTab(AllTabs.SolidTab):
+			class SolidTab (AllTabs.SolidTab):
 				Index = 0
-			class SurfaceTab(AllTabs.SurfaceTab):
+			class SurfaceTab (AllTabs.SurfaceTab):
 				Index = 1
-			class ParaMeshOuterTab(AllTabs.ParaMeshOuterTab):
+			class ParaMeshOuterTab (AllTabs.ParaMeshOuterTab):
 				Index = 18
-			class FormTab(AllTabs.FormTab):
+			class FormTab (AllTabs.FormTab):
 				Index = 2
-			class SheetMetalTab(AllTabs.SheetMetalTab):
+			class SheetMetalTab (AllTabs.SheetMetalTab):
 				Index = 3
-			class ToolsTab(AllTabs.ToolsTab):
+			class ToolsTab (AllTabs.ToolsTab):
 				Index = 4
-			class ManageTab(AllTabs.ManageTab):
+			class ManageTab (AllTabs.ManageTab):
 				Index = 5
-			class PCBTab(AllTabs.PCBTab):
+			class PCBTab (AllTabs.PCBTab):
 				Index = 6
-			class Package3DTab(AllTabs.Package3DTab):
+			class PackageTab (AllTabs.PackageTab):
 				Index = 8
-			class BasefeatureSolidTab(AllTabs.BasefeatureSolidTab):
+			class BasefeatureSolidTab (AllTabs.BasefeatureSolidTab):
 				Index = 10
-			class BasefeatureSurfaceTab(AllTabs.BasefeatureSurfaceTab):
+			class BasefeatureSurfaceTab (AllTabs.BasefeatureSurfaceTab):
 				Index = 11
-			class SketchTab(AllTabs.SketchTab):
+			class SketchTab (AllTabs.SketchTab):
 				Index = 12
-			class EditSnapshotTab(AllTabs.EditSnapshotTab):
+			class EditSnapshotTab (AllTabs.EditSnapshotTab):
 				Index = 13
-			class ParaMeshBaseFeatureTab(AllTabs.ParaMeshBaseFeatureTab):
+			class ParaMeshBaseFeatureTab (AllTabs.ParaMeshBaseFeatureTab):
 				Index = 19
 		class Panels:
 			FilePanel = AllPanels.FilePanel
 			DiagnosticsPanel = AllPanels.DiagnosticsPanel
 			UIDemo = AllPanels.UIDemo
 			SketchCreatePanel = AllPanels.SketchCreatePanel
-			PCB3DSketchCreatePanel = AllPanels.PCB3DSketchCreatePanel
+			PCBSketchCreatePanel = AllPanels.PCBSketchCreatePanel
 			SketchModifyPanel = AllPanels.SketchModifyPanel
 			SketchConstraintsPanel = AllPanels.SketchConstraintsPanel
 			SolidCreatePanel = AllPanels.SolidCreatePanel
@@ -6502,7 +6859,7 @@ class WorkSpaces:
 			MeshModifyPanel = AllPanels.MeshModifyPanel
 			PCBCreatePanel = AllPanels.PCBCreatePanel
 			PCBModifyPanel = AllPanels.PCBModifyPanel
-			PCB3DPanel = AllPanels.PCB3DPanel
+			PCBPanel = AllPanels.PCBPanel
 			ConstructionPanel = AllPanels.ConstructionPanel
 			InspectPanel = AllPanels.InspectPanel
 			InspectMeshPanel = AllPanels.InspectMeshPanel
@@ -6511,7 +6868,7 @@ class WorkSpaces:
 			StopPackagePanel = AllPanels.StopPackagePanel
 			ReturnLibraryPanel = AllPanels.ReturnLibraryPanel
 			PackagePanel = AllPanels.PackagePanel
-			Package3DPanel = AllPanels.Package3DPanel
+			PackagePanel = AllPanels.PackagePanel
 			MakePanel = AllPanels.MakePanel
 			SolidScriptsAddinsPanel = AllPanels.SolidScriptsAddinsPanel
 			UtilityPanel = AllPanels.UtilityPanel
@@ -6541,18 +6898,19 @@ class WorkSpaces:
 			ParaMeshSelectPanel = AllPanels.ParaMeshSelectPanel
 			ParaMeshExportPanel = AllPanels.ParaMeshExportPanel
 			ParaMeshBaseFeatureStopPanel = AllPanels.ParaMeshBaseFeatureStopPanel
+			zxynine_anyMacroPanel = AllPanels.zxynine_anyMacroPanel
 			thomasa88_anyShortcutPanel = AllPanels.thomasa88_anyShortcutPanel
 	class FusionRenderEnvironment:
 		ID = "FusionRenderEnvironment"
 		class Tabs:
-			class RenderTab(AllTabs.RenderTab):
+			class RenderTab (AllTabs.RenderTab):
 				Index = 16
 		class Panels:
 			FilePanel = AllPanels.FilePanel
 			DiagnosticsPanel = AllPanels.DiagnosticsPanel
 			UIDemo = AllPanels.UIDemo
 			SketchCreatePanel = AllPanels.SketchCreatePanel
-			PCB3DSketchCreatePanel = AllPanels.PCB3DSketchCreatePanel
+			PCBSketchCreatePanel = AllPanels.PCBSketchCreatePanel
 			SketchModifyPanel = AllPanels.SketchModifyPanel
 			SketchConstraintsPanel = AllPanels.SketchConstraintsPanel
 			SolidCreatePanel = AllPanels.SolidCreatePanel
@@ -6573,7 +6931,7 @@ class WorkSpaces:
 			MeshModifyPanel = AllPanels.MeshModifyPanel
 			PCBCreatePanel = AllPanels.PCBCreatePanel
 			PCBModifyPanel = AllPanels.PCBModifyPanel
-			PCB3DPanel = AllPanels.PCB3DPanel
+			PCBPanel = AllPanels.PCBPanel
 			ConstructionPanel = AllPanels.ConstructionPanel
 			InspectPanel = AllPanels.InspectPanel
 			InspectMeshPanel = AllPanels.InspectMeshPanel
@@ -6582,7 +6940,7 @@ class WorkSpaces:
 			StopPackagePanel = AllPanels.StopPackagePanel
 			ReturnLibraryPanel = AllPanels.ReturnLibraryPanel
 			PackagePanel = AllPanels.PackagePanel
-			Package3DPanel = AllPanels.Package3DPanel
+			PackagePanel = AllPanels.PackagePanel
 			MakePanel = AllPanels.MakePanel
 			SolidScriptsAddinsPanel = AllPanels.SolidScriptsAddinsPanel
 			UtilityPanel = AllPanels.UtilityPanel
@@ -6612,11 +6970,12 @@ class WorkSpaces:
 			ParaMeshSelectPanel = AllPanels.ParaMeshSelectPanel
 			ParaMeshExportPanel = AllPanels.ParaMeshExportPanel
 			ParaMeshBaseFeatureStopPanel = AllPanels.ParaMeshBaseFeatureStopPanel
+			zxynine_anyMacroPanel = AllPanels.zxynine_anyMacroPanel
 			thomasa88_anyShortcutPanel = AllPanels.thomasa88_anyShortcutPanel
-	class Publisher3DEnvironment:
+	class PublisherEnvironment:
 		ID = "Publisher3DEnvironment"
 		class Tabs:
-			class Animation(AllTabs.Animation):
+			class Animation (AllTabs.Animation):
 				Index = 0
 		class Panels:
 			StoryboardPanel = AllPanels.StoryboardPanel
@@ -6627,11 +6986,11 @@ class WorkSpaces:
 	class SimulationEnvironment:
 		ID = "SimulationEnvironment"
 		class Tabs:
-			class SimSetupTab(AllTabs.SimSetupTab):
+			class SimSetupTab (AllTabs.SimSetupTab):
 				Index = 0
-			class SimResultsTab(AllTabs.SimResultsTab):
+			class SimResultsTab (AllTabs.SimResultsTab):
 				Index = 1
-			class CompareTab(AllTabs.CompareTab):
+			class CompareTab (AllTabs.CompareTab):
 				Index = 2
 		class Panels:
 			ResultToolsPanel = AllPanels.ResultToolsPanel
@@ -6669,25 +7028,25 @@ class WorkSpaces:
 	class CAMEnvironment:
 		ID = "CAMEnvironment"
 		class Tabs:
-			class MillingTab(AllTabs.MillingTab):
+			class MillingTab (AllTabs.MillingTab):
 				Index = 0
-			class TurningTab(AllTabs.TurningTab):
+			class TurningTab (AllTabs.TurningTab):
 				Index = 1
-			class AdditiveTab(AllTabs.AdditiveTab):
+			class AdditiveTab (AllTabs.AdditiveTab):
 				Index = 2
-			class AdditiveResultsTab(AllTabs.AdditiveResultsTab):
+			class AdditiveResultsTab (AllTabs.AdditiveResultsTab):
 				Index = 3
-			class ProbingTab(AllTabs.ProbingTab):
+			class ProbingTab (AllTabs.ProbingTab):
 				Index = 4
-			class FabricationTab(AllTabs.FabricationTab):
+			class FabricationTab (AllTabs.FabricationTab):
 				Index = 5
-			class UtilitiesTab(AllTabs.UtilitiesTab):
+			class UtilitiesTab (AllTabs.UtilitiesTab):
 				Index = 6
-			class PartAlignmentTab(AllTabs.PartAlignmentTab):
+			class PartAlignmentTab (AllTabs.PartAlignmentTab):
 				Index = 7
-			class LiveAlignmentTab(AllTabs.LiveAlignmentTab):
+			class LiveAlignmentTab (AllTabs.LiveAlignmentTab):
 				Index = 8
-			class FeaturesTab(AllTabs.FeaturesTab):
+			class FeaturesTab (AllTabs.FeaturesTab):
 				Index = 9
 		class Panels:
 			CAMJobPanel = AllPanels.CAMJobPanel
@@ -6695,7 +7054,7 @@ class WorkSpaces:
 			CAMAdditiveJobPanel = AllPanels.CAMAdditiveJobPanel
 			CAMAdditivePositioningPanel = AllPanels.CAMAdditivePositioningPanel
 			CAM2DPanel = AllPanels.CAM2DPanel
-			CAM3DPanel = AllPanels.CAM3DPanel
+			CAMPanel = AllPanels.CAMPanel
 			CAMEditPanel = AllPanels.CAMEditPanel
 			CAMDrillingPanel = AllPanels.CAMDrillingPanel
 			CAMMultiAxisPanel = AllPanels.CAMMultiAxisPanel
@@ -6737,15 +7096,15 @@ class WorkSpaces:
 	class FusionDocumentationEnvironment:
 		ID = "FusionDocumentationEnvironment"
 		class Tabs:
-			class FusionDocTab(AllTabs.FusionDocTab):
+			class FusionDocTab (AllTabs.FusionDocTab):
 				Index = 0
-			class ManageTab(AllTabs.ManageTab):
+			class ManageTab (AllTabs.ManageTab):
 				Index = 1
-			class TitleBlockTab(AllTabs.TitleBlockTab):
+			class TitleBlockTab (AllTabs.TitleBlockTab):
 				Index = 2
-			class BorderTab(AllTabs.BorderTab):
+			class BorderTab (AllTabs.BorderTab):
 				Index = 3
-			class SketchTab(AllTabs.SketchTab):
+			class SketchTab (AllTabs.SketchTab):
 				Index = 4
 		class Panels:
 			ViewsPanel = AllPanels.ViewsPanel
@@ -6768,13 +7127,13 @@ class WorkSpaces:
 	class ElectronEmptyLbrEnvironment:
 		ID = "ElectronEmptyLbrEnvironment"
 		class Tabs:
-			class LbrEmptyTab(AllTabs.LbrEmptyTab):
+			class LbrEmptyTab (AllTabs.LbrEmptyTab):
 				Index = 0
-			class LbrDocumentTab(AllTabs.LbrDocumentTab):
+			class LbrDocumentTab (AllTabs.LbrDocumentTab):
 				Index = 4
-			class LbrAutomateTab(AllTabs.LbrAutomateTab):
+			class LbrAutomateTab (AllTabs.LbrAutomateTab):
 				Index = 5
-			class LbrManagementTab(AllTabs.LbrManagementTab):
+			class LbrManagementTab (AllTabs.LbrManagementTab):
 				Index = 6
 		class Panels:
 			LbrCreatePanel = AllPanels.LbrCreatePanel
@@ -6805,13 +7164,13 @@ class WorkSpaces:
 	class ElectronDeviceEnvironment:
 		ID = "ElectronDeviceEnvironment"
 		class Tabs:
-			class LbrDeviceTab(AllTabs.LbrDeviceTab):
+			class LbrDeviceTab (AllTabs.LbrDeviceTab):
 				Index = 1
-			class LbrDocumentTab(AllTabs.LbrDocumentTab):
+			class LbrDocumentTab (AllTabs.LbrDocumentTab):
 				Index = 4
-			class LbrAutomateTab(AllTabs.LbrAutomateTab):
+			class LbrAutomateTab (AllTabs.LbrAutomateTab):
 				Index = 5
-			class LbrManagementTab(AllTabs.LbrManagementTab):
+			class LbrManagementTab (AllTabs.LbrManagementTab):
 				Index = 6
 		class Panels:
 			LbrCreatePanel = AllPanels.LbrCreatePanel
@@ -6842,13 +7201,13 @@ class WorkSpaces:
 	class ElectronFootprintEnvironment:
 		ID = "ElectronFootprintEnvironment"
 		class Tabs:
-			class LbrFootprintTab(AllTabs.LbrFootprintTab):
+			class LbrFootprintTab (AllTabs.LbrFootprintTab):
 				Index = 2
-			class LbrDocumentTab(AllTabs.LbrDocumentTab):
+			class LbrDocumentTab (AllTabs.LbrDocumentTab):
 				Index = 4
-			class LbrAutomateTab(AllTabs.LbrAutomateTab):
+			class LbrAutomateTab (AllTabs.LbrAutomateTab):
 				Index = 5
-			class LbrManagementTab(AllTabs.LbrManagementTab):
+			class LbrManagementTab (AllTabs.LbrManagementTab):
 				Index = 6
 		class Panels:
 			LbrCreatePanel = AllPanels.LbrCreatePanel
@@ -6879,13 +7238,13 @@ class WorkSpaces:
 	class ElectronSymbolEnvironment:
 		ID = "ElectronSymbolEnvironment"
 		class Tabs:
-			class LbrSymbolTab(AllTabs.LbrSymbolTab):
+			class LbrSymbolTab (AllTabs.LbrSymbolTab):
 				Index = 3
-			class LbrDocumentTab(AllTabs.LbrDocumentTab):
+			class LbrDocumentTab (AllTabs.LbrDocumentTab):
 				Index = 4
-			class LbrAutomateTab(AllTabs.LbrAutomateTab):
+			class LbrAutomateTab (AllTabs.LbrAutomateTab):
 				Index = 5
-			class LbrManagementTab(AllTabs.LbrManagementTab):
+			class LbrManagementTab (AllTabs.LbrManagementTab):
 				Index = 6
 		class Panels:
 			LbrCreatePanel = AllPanels.LbrCreatePanel
@@ -6916,13 +7275,13 @@ class WorkSpaces:
 	class ElectronPackageEnvironment:
 		ID = "ElectronPackageEnvironment"
 		class Tabs:
-			class LbrDocumentTab(AllTabs.LbrDocumentTab):
+			class LbrDocumentTab (AllTabs.LbrDocumentTab):
 				Index = 4
-			class LbrAutomateTab(AllTabs.LbrAutomateTab):
+			class LbrAutomateTab (AllTabs.LbrAutomateTab):
 				Index = 5
-			class LbrManagementTab(AllTabs.LbrManagementTab):
+			class LbrManagementTab (AllTabs.LbrManagementTab):
 				Index = 6
-			class LbrPackageTab(AllTabs.LbrPackageTab):
+			class LbrPackageTab (AllTabs.LbrPackageTab):
 				Index = 7
 		class Panels:
 			LbrCreatePanel = AllPanels.LbrCreatePanel
